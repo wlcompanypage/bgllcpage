@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Loan Application | BG LLC</title>
+<link rel="icon" href="gbol.png" type="image/png" />
+<meta name="description" content="Apply for a personal loan with BG LLC. Flexible financing solutions tailored to your needs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== APPLICATION PAGE STYLES ===== */
+.app-page{min-height:100vh;background:var(--cream);}
+
+.app-hero{
+  background:linear-gradient(135deg,var(--deep-green) 0%,var(--mid-green) 100%);
+  padding:60px 0 50px;text-align:center;
+}
+.app-hero .back-link{
+  display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.7);
+  font-size:14px;font-weight:600;margin-bottom:28px;transition:color .2s;
+}
+.app-hero .back-link:hover{color:var(--white);}
+.app-hero .back-link svg{width:16px;height:16px;}
+.app-hero h1{color:var(--white);font-size:clamp(26px,4vw,38px);margin-bottom:10px;}
+.app-hero p{color:rgba(255,255,255,0.82);font-size:16px;max-width:520px;margin:0 auto;}
+.app-hero .hero-badge{
+  display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:8px 18px;
+  color:rgba(255,255,255,0.9);font-size:13px;font-weight:600;margin-bottom:20px;
+}
+
+.app-form-wrap{max-width:760px;margin:-30px auto 60px;padding:0 24px;}
+
+.app-form-card{
+  background:var(--white);border-radius:20px;box-shadow:0 20px 50px -20px rgba(22,36,28,0.3);
+  overflow:hidden;
+}
+
+.form-progress{
+  background:var(--pale-green);padding:20px 32px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.form-progress span{font-size:13px;font-weight:600;color:var(--mid-green);}
+.progress-bar{flex:1;height:6px;background:rgba(63,122,87,0.2);border-radius:999px;min-width:80px;}
+.progress-fill{height:100%;background:var(--deep-green);border-radius:999px;width:100%;}
+
+.form-inner{padding:36px 40px;}
+@media(max-width:600px){.form-inner{padding:24px 20px;}}
+
+.section-title{
+  font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--deep-green);
+  margin:28px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--pale-green);
+  display:flex;align-items:center;gap:10px;
+}
+.section-title:first-child{margin-top:0;}
+.section-title .icon{
+  width:32px;height:32px;border-radius:8px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--mid-green),var(--deep-green));
+  display:flex;align-items:center;justify-content:center;
+}
+.section-title .icon svg{width:16px;height:16px;stroke:white;}
+
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+@media(max-width:640px){
+  .form-row-2,.form-row-3{grid-template-columns:1fr;}
+}
+
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.field label{font-size:12.5px;font-weight:700;color:var(--deep-green);letter-spacing:0.02em;text-transform:uppercase;}
+.field input,.field select,.field textarea{
+  padding:13px 15px;border-radius:10px;border:1.5px solid rgba(51,64,31,0.15);
+  font-family:'Inter',sans-serif;font-size:14.5px;background:var(--cream);
+  transition:border-color .2s,box-shadow .2s;width:100%;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--mid-green);outline:none;box-shadow:0 0 0 3px rgba(63,122,87,0.15);
+}
+.field textarea{resize:vertical;min-height:90px;}
+.field .hint{font-size:11.5px;color:#8a7f6e;margin-top:2px;}
+
+.consent-block{
+  background:var(--pale-green);border-radius:12px;padding:20px;margin:20px 0;
+  border:1.5px solid rgba(63,122,87,0.2);
+}
+.consent-check{display:flex;align-items:flex-start;gap:12px;}
+.consent-check input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--deep-green);}
+.consent-check label{font-size:14px;color:#3a3428;font-weight:500;line-height:1.5;}
+
+.submit-btn{
+  width:100%;background:linear-gradient(135deg,var(--deep-green),var(--mid-green));
+  color:var(--white);padding:17px 28px;border-radius:999px;font-size:16px;font-weight:700;
+  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;
+  transition:transform .2s,box-shadow .2s;margin-top:8px;box-shadow:0 14px 30px -10px rgba(46,100,74,0.5);
+}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(46,100,74,0.6);}
+.submit-btn svg{width:20px;height:20px;}
+
+.submit-note{text-align:center;font-size:13px;color:#6b6250;margin-top:12px;}
+.submit-note strong{color:var(--deep-green);}
+
+.trust-badges{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:28px;padding:24px;border-top:1px solid var(--pale-green);}
+.trust-badge{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--mid-green);}
+.trust-badge svg{width:18px;height:18px;flex-shrink:0;}
+</style>
+</head>
+<body class="app-page">
+
+<!-- Minimal navbar -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link" aria-label="BG LLC home">
+      <img src="gbol.png" alt="BG LLC logo"
+           onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'logo-fallback',innerHTML:'<div class=badge>BG</div><div><span class=wordmark>BG LLC</span><small>Loans · Classes · Credit Repair</small></div>'}))">
+    </a>
+    <div class="nav-actions">
+      <a class="btn btn-whatsapp btn-small" href="https://wa.me/14075155785" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="app-hero">
+  <div class="container" style="text-align:center;">
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Home
+    </a>
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/></svg>
+      Personal Loan Application
+    </div>
+    <h1>Apply for a Personal Loan</h1>
+    <p>Complete the form below and we'll review your application and reach out to discuss your options.</p>
+  </div>
+</div>
+
+<!-- Application Form -->
+<div class="app-form-wrap">
+  <div class="app-form-card">
+
+    <div class="form-progress">
+      <span>Application Form</span>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <span style="color:var(--deep-green);">BG LLC</span>
+    </div>
+
+    <div class="form-inner">
+      <form id="loanForm" novalidate>
+
+        <!-- Personal Information -->
+        <div class="section-title">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          Personal Information
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label>Full Name *</label>
+            <input type="text" name="fullName" required placeholder="John Doe">
+          </div>
+          <div class="field">
+            <label>Date of Birth *</label>
+            <input type="date" name="dob" required>
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="field">
+            <label>Phone Number *</label>
+            <input type="tel" name="phone" required placeholder="+1 (407) 000-0000">
+          </div>
+          <div class="field">
+            <label>Email Address *</label>
+            <input type="email" name="email" required placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="field">
+          <label>Current Address *</label>
+          <input type="text" name="address" required placeholder="123 Main Street, Apt 4B">
+        </div>
+        <div class="form-row-3">
+          <div class="field">
+            <label>City *</label>
+            <input type="text" name="city" required placeholder="Orlando">
+          </div>
+          <div class="field">
+            <label>State *</label>
+            <input type="text" name="state" required placeholder="FL">
+          </div>
+          <div class="field">
+            <label>ZIP Code *</label>
+            <input type="text" name="zip" required placeholder="32801">
+          </div>
+        </div>
+
+        <!-- Employment Information -->
+        <div class="section-title">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke-linecap="round"/></svg></div>
+          Employment Information
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label>Employer Name *</label>
+            <input type="text" name="employer" required placeholder="Acme Corp">
+          </div>
+          <div class="field">
+            <label>Job Title *</label>
+            <input type="text" name="jobTitle" required placeholder="Manager">
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="field">
+            <label>Employment Status *</label>
+            <select name="employmentStatus" required>
+              <option value="" disabled selected>Select status</option>
+              <option>Full-Time Employee</option>
+              <option>Part-Time Employee</option>
+              <option>Self-Employed</option>
+              <option>Contractor / Freelancer</option>
+              <option>Retired</option>
+              <option>Unemployed</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Monthly Income *</label>
+            <input type="text" name="monthlyIncome" required placeholder="$3,500">
+            <span class="hint">Gross monthly income before taxes</span>
+          </div>
+        </div>
+        <div class="field">
+          <label>Length of Employment</label>
+          <input type="text" name="employmentLength" placeholder="e.g. 2 years 4 months">
+        </div>
+
+        <!-- Loan Information -->
+        <div class="section-title">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/></svg></div>
+          Loan Information
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label>Requested Loan Amount *</label>
+            <input type="text" name="loanAmount" required placeholder="$10,000">
+          </div>
+          <div class="field">
+            <label>Desired Funding Date</label>
+            <input type="date" name="fundingDate">
+          </div>
+        </div>
+        <div class="field">
+          <label>Purpose of Loan *</label>
+          <select name="loanPurpose" required>
+            <option value="" disabled selected>Select purpose</option>
+            <option>Debt Consolidation</option>
+            <option>Home Improvement</option>
+            <option>Medical Expenses</option>
+            <option>Vehicle Purchase</option>
+            <option>Education</option>
+            <option>Business Investment</option>
+            <option>Emergency / Unexpected Expenses</option>
+            <option>Travel</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <!-- Financial Information -->
+        <div class="section-title">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          Financial Information
+        </div>
+
+        <div class="form-row-2">
+          <div class="field">
+            <label>Credit Score Range *</label>
+            <select name="creditScore" required>
+              <option value="" disabled selected>Select range</option>
+              <option>Below 580 (Poor)</option>
+              <option>580–669 (Fair)</option>
+              <option>670–739 (Good)</option>
+              <option>740–799 (Very Good)</option>
+              <option>800+ (Exceptional)</option>
+              <option>I don't know</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Existing Monthly Debt</label>
+            <input type="text" name="monthlyDebt" placeholder="$800">
+            <span class="hint">Car payments, credit cards, student loans, etc.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label>Additional Comments</label>
+          <textarea name="comments" placeholder="Any additional information that may support your application..."></textarea>
+        </div>
+
+        <!-- Consent -->
+        <div class="consent-block">
+          <div class="consent-check">
+            <input type="checkbox" id="loanConsent" name="consent" required>
+            <label for="loanConsent">I certify that all information provided in this application is accurate and complete to the best of my knowledge. I understand this information will be shared with BG LLC to evaluate my loan request.</label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="loanSubmitBtn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
+          Submit Application &amp; Open WhatsApp
+        </button>
+        <p class="submit-note">Your application will be sent to <strong>BG LLC</strong> via WhatsApp at <strong>+1 (407) 515-5785</strong></p>
+
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round"/></svg>
+            Secure &amp; Confidential
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No Obligation
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Fast Response
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Simple footer -->
+<footer style="background:var(--deep-green);color:rgba(255,255,255,0.6);text-align:center;padding:24px;">
+  <p style="font-size:13px;">© 2026 BG LLC. All rights reserved. &nbsp;·&nbsp; <a href="index.html" style="color:var(--light-green);">Back to Home</a></p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/14075155785" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-float-ring"></span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
+</a>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  const WA = 'https://wa.me/14075155785?text=';
+
+  const form = document.getElementById('loanForm');
+  const toast = document.getElementById('toast');
+
+  function showToast(msg, isError){
+    toast.textContent = msg;
+    toast.style.background = isError ? '#c23' : 'var(--deep-green)';
+    toast.classList.add('show');
+    setTimeout(()=>toast.classList.remove('show'), 3800);
+  }
+
+  function v(name){ return (form.elements[name] && form.elements[name].value.trim()) || ''; }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    if(!v('fullName') || !v('phone') || !v('email') || !v('loanAmount') || !v('loanPurpose') || !v('employmentStatus') || !v('creditScore')){
+      showToast('Please complete all required fields.', true);
+      return;
+    }
+    if(!form.elements['consent'].checked){
+      showToast('Please certify that your information is accurate.', true);
+      return;
+    }
+
+    const msg =
+`BG LLC PERSONAL LOAN APPLICATION
+
+━━━ APPLICANT INFORMATION ━━━
+Name: ${v('fullName')}
+Date of Birth: ${v('dob')}
+Phone: ${v('phone')}
+Email: ${v('email')}
+Address: ${v('address')}, ${v('city')}, ${v('state')} ${v('zip')}
+
+━━━ EMPLOYMENT ━━━
+Employer: ${v('employer')}
+Position: ${v('jobTitle')}
+Status: ${v('employmentStatus')}
+Monthly Income: ${v('monthlyIncome')}
+Employment Length: ${v('employmentLength') || 'Not specified'}
+
+━━━ LOAN DETAILS ━━━
+Requested Amount: ${v('loanAmount')}
+Loan Purpose: ${v('loanPurpose')}
+Desired Funding Date: ${v('fundingDate') || 'Flexible'}
+
+━━━ FINANCIAL INFORMATION ━━━
+Credit Score Range: ${v('creditScore')}
+Monthly Debt: ${v('monthlyDebt') || 'Not specified'}
+
+━━━ ADDITIONAL COMMENTS ━━━
+${v('comments') || 'None'}
+
+Submitted via BG LLC Website`;
+
+    showToast('Thank you! Your information has been prepared and you are being redirected to WhatsApp.');
+    setTimeout(()=>{
+      window.open(WA + encodeURIComponent(msg), '_blank');
+      form.reset();
+    }, 900);
+  });
+
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', ()=>{
+    navbar.classList.toggle('scrolled', window.scrollY > 80);
+  });
+})();
+</script>
+</body>
+</html>

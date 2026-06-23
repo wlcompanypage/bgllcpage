@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Application | BG LLC Financial Education</title>
+<link rel="icon" href="gbol.png" type="image/png" />
+<meta name="description" content="Apply for BG LLC's financial education classes and workshops. Credit repair, business credit, tax preparation, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.app-page{min-height:100vh;background:var(--cream);}
+
+.app-hero{
+  background:linear-gradient(135deg,#1B3A2B 0%,#3F7A57 100%);
+  padding:60px 0 50px;text-align:center;
+}
+.app-hero .back-link{
+  display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.7);
+  font-size:14px;font-weight:600;margin-bottom:28px;transition:color .2s;
+}
+.app-hero .back-link:hover{color:#fff;}
+.app-hero .back-link svg{width:16px;height:16px;}
+.app-hero h1{color:#fff;font-size:clamp(26px,4vw,38px);margin-bottom:10px;}
+.app-hero p{color:rgba(255,255,255,0.82);font-size:16px;max-width:540px;margin:0 auto;}
+.app-hero .hero-badge{
+  display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.22);border-radius:999px;padding:8px 18px;
+  color:rgba(255,255,255,0.9);font-size:13px;font-weight:600;margin-bottom:20px;
+}
+
+/* Classes showcase */
+.classes-strip{
+  background:rgba(255,255,255,0.1);border-top:1px solid rgba(255,255,255,0.12);
+  padding:16px 0;margin-top:36px;overflow:hidden;
+}
+.classes-strip-inner{
+  display:flex;gap:24px;justify-content:center;flex-wrap:wrap;padding:0 24px;
+}
+.class-pill{
+  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);
+  border-radius:999px;padding:7px 16px;font-size:12.5px;font-weight:600;
+  color:rgba(255,255,255,0.88);white-space:nowrap;
+}
+
+.app-form-wrap{max-width:700px;margin:-30px auto 60px;padding:0 24px;}
+
+.app-form-card{
+  background:var(--white);border-radius:20px;
+  box-shadow:0 20px 50px -20px rgba(22,36,28,0.3);overflow:hidden;
+}
+
+.price-banner{
+  background:linear-gradient(90deg,var(--deep-green),var(--mid-green));
+  padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.price-banner .price-big{font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:#fff;}
+.price-banner .price-per{font-size:14px;color:rgba(255,255,255,0.7);margin-left:4px;}
+.price-banner .finance-tag{
+  background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);
+  border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;color:#fff;
+  display:flex;align-items:center;gap:7px;
+}
+
+.form-inner{padding:36px 40px;}
+@media(max-width:600px){.form-inner{padding:22px 18px;}}
+
+.section-title{
+  font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--deep-green);
+  margin:28px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--pale-green);
+  display:flex;align-items:center;gap:10px;
+}
+.section-title:first-child{margin-top:0;}
+.section-title .icon{
+  width:32px;height:32px;border-radius:8px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--mid-green),var(--deep-green));
+  display:flex;align-items:center;justify-content:center;
+}
+.section-title .icon svg{width:16px;height:16px;stroke:white;}
+
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:600px){.form-row-2{grid-template-columns:1fr;}}
+
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.field label{font-size:12.5px;font-weight:700;color:var(--deep-green);letter-spacing:0.02em;text-transform:uppercase;}
+.field input,.field select,.field textarea{
+  padding:13px 15px;border-radius:10px;border:1.5px solid rgba(51,64,31,0.15);
+  font-family:'Inter',sans-serif;font-size:14.5px;background:var(--cream);
+  transition:border-color .2s,box-shadow .2s;width:100%;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--mid-green);outline:none;box-shadow:0 0 0 3px rgba(63,122,87,0.15);
+}
+.field textarea{resize:vertical;min-height:110px;}
+
+/* Class cards selector */
+.class-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+@media(max-width:500px){.class-grid{grid-template-columns:1fr;}}
+.class-option{display:none;}
+.class-label{
+  display:flex;align-items:center;gap:10px;padding:12px 16px;
+  border-radius:10px;border:1.5px solid rgba(51,64,31,0.15);background:var(--cream);
+  cursor:pointer;transition:all .2s;font-size:13.5px;font-weight:600;color:var(--ink);
+}
+.class-label:hover{border-color:var(--mid-green);background:var(--pale-green);}
+.class-option:checked + .class-label{
+  border-color:var(--deep-green);background:var(--pale-green);color:var(--deep-green);
+  box-shadow:0 0 0 3px rgba(63,122,87,0.12);
+}
+.class-label .dot{
+  width:16px;height:16px;border-radius:50%;border:2px solid rgba(51,64,31,0.3);
+  flex-shrink:0;transition:all .2s;
+}
+.class-option:checked + .class-label .dot{
+  background:var(--deep-green);border-color:var(--deep-green);
+}
+
+.radio-row{display:flex;gap:12px;flex-wrap:wrap;}
+.radio-opt{display:none;}
+.radio-lbl{
+  display:flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;
+  border:1.5px solid rgba(51,64,31,0.15);background:var(--cream);cursor:pointer;
+  font-size:14px;font-weight:600;color:var(--ink);transition:all .2s;
+}
+.radio-lbl:hover{border-color:var(--mid-green);}
+.radio-opt:checked + .radio-lbl{border-color:var(--deep-green);background:var(--pale-green);color:var(--deep-green);}
+
+.submit-btn{
+  width:100%;background:linear-gradient(135deg,var(--deep-green),var(--mid-green));
+  color:var(--white);padding:17px 28px;border-radius:999px;font-size:16px;font-weight:700;
+  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;
+  transition:transform .2s,box-shadow .2s;margin-top:8px;
+  box-shadow:0 14px 30px -10px rgba(46,100,74,0.5);
+}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(46,100,74,0.6);}
+.submit-note{text-align:center;font-size:13px;color:#6b6250;margin-top:12px;}
+.submit-note strong{color:var(--deep-green);}
+.trust-badges{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:28px;padding:24px;border-top:1px solid var(--pale-green);}
+.trust-badge{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--mid-green);}
+.trust-badge svg{width:18px;height:18px;flex-shrink:0;}
+</style>
+</head>
+<body class="app-page">
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link" aria-label="BG LLC home">
+      <img src="gbol.png" alt="BG LLC logo"
+           onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'logo-fallback',innerHTML:'<div class=badge>BG</div><div><span class=wordmark>BG LLC</span><small>Loans · Classes · Credit Repair</small></div>'}))">
+    </a>
+    <div class="nav-actions">
+      <a class="btn btn-whatsapp btn-small" href="https://wa.me/14075155785" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="app-hero">
+  <div class="container" style="text-align:center;">
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Home
+    </a>
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.7 3 6 3s6-1.34 6-3v-5" stroke-linecap="round"/></svg>
+      Financial Education &amp; Training
+    </div>
+    <h1>Apply for a Class Today</h1>
+    <p>Take the next step toward financial independence. Select your program and we'll get you enrolled.</p>
+  </div>
+  <div class="classes-strip">
+    <div class="classes-strip-inner">
+      <span class="class-pill">Credit Repair</span>
+      <span class="class-pill">Business Credit</span>
+      <span class="class-pill">Tax Preparation</span>
+      <span class="class-pill">Business Formation</span>
+      <span class="class-pill">Financial Literacy</span>
+      <span class="class-pill">Business Development</span>
+    </div>
+  </div>
+</div>
+
+<!-- Form Card -->
+<div class="app-form-wrap">
+  <div class="app-form-card">
+
+    <div class="price-banner">
+      <div>
+        <span class="price-big">$1,500</span>
+        <span class="price-per">per workshop</span>
+      </div>
+      <div class="finance-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/></svg>
+        Financing Available
+      </div>
+    </div>
+
+    <div class="form-inner">
+      <form id="classForm" novalidate>
+
+        <!-- Personal Information -->
+        <div class="section-title">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          Personal Information
+        </div>
+
+        <div class="field">
+          <label>Full Name *</label>
+          <input type="text" name="fullName" required placeholder="John Doe">
+        </div>
+        <div class="form-row-2">
+          <div class="field">
+            <label>Phone Number *</label>
+            <input type="tel" name="phone" required placeholder="+1 (407) 000-0000">
+          </div>
+          <div class="field">
+            <label>Email Address *</label>
+            <input type="email" name="email" required placeholder="you@email.com">
+          </div>
+        </div>
+
+        <!-- Class Selection -->
+        <div class="section-title">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.7 3 6 3s6-1.34 6-3v-5" stroke-linecap="round"/></svg></div>
+          Select Your Class *
+        </div>
+
+        <div class="class-grid">
+          <div>
+            <input type="radio" name="classSelected" id="cls1" value="Credit Repair Class" class="class-option">
+            <label for="cls1" class="class-label"><span class="dot"></span>Credit Repair</label>
+          </div>
+          <div>
+            <input type="radio" name="classSelected" id="cls2" value="Business Credit Class" class="class-option">
+            <label for="cls2" class="class-label"><span class="dot"></span>Business Credit</label>
+          </div>
+          <div>
+            <input type="radio" name="classSelected" id="cls3" value="Tax Preparation Class" class="class-option">
+            <label for="cls3" class="class-label"><span class="dot"></span>Tax Preparation</label>
+          </div>
+          <div>
+            <input type="radio" name="classSelected" id="cls4" value="Business Formation Class" class="class-option">
+            <label for="cls4" class="class-label"><span class="dot"></span>Business Formation</label>
+          </div>
+          <div>
+            <input type="radio" name="classSelected" id="cls5" value="Financial Literacy Class" class="class-option">
+            <label for="cls5" class="class-label"><span class="dot"></span>Financial Literacy</label>
+          </div>
+          <div>
+            <input type="radio" name="classSelected" id="cls6" value="Business Development Class" class="class-option">
+            <label for="cls6" class="class-label"><span class="dot"></span>Business Development</label>
+          </div>
+        </div>
+
+        <!-- Enrollment Details -->
+        <div class="section-title">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke-linecap="round"/></svg></div>
+          Enrollment Details
+        </div>
+
+        <div class="field">
+          <label>Preferred Start Date</label>
+          <input type="date" name="startDate">
+        </div>
+
+        <div class="field">
+          <label>Preferred Contact Method *</label>
+          <div class="radio-row">
+            <input type="radio" name="contactMethod" id="cm1" value="WhatsApp" class="radio-opt">
+            <label for="cm1" class="radio-lbl">WhatsApp</label>
+
+            <input type="radio" name="contactMethod" id="cm2" value="Phone Call" class="radio-opt">
+            <label for="cm2" class="radio-lbl">Phone Call</label>
+
+            <input type="radio" name="contactMethod" id="cm3" value="Email" class="radio-opt">
+            <label for="cm3" class="radio-lbl">Email</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Financing Needed? *</label>
+          <div class="radio-row">
+            <input type="radio" name="financing" id="fin1" value="Yes" class="radio-opt">
+            <label for="fin1" class="radio-lbl">Yes, I need financing</label>
+
+            <input type="radio" name="financing" id="fin2" value="No" class="radio-opt">
+            <label for="fin2" class="radio-lbl">No, I'll pay in full</label>
+          </div>
+        </div>
+
+        <!-- Goals -->
+        <div class="section-title">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3" stroke-linecap="round"/></svg></div>
+          Your Goals
+        </div>
+
+        <div class="field">
+          <label>What are you hoping to achieve through this class? *</label>
+          <textarea name="goals" required placeholder="Share what you're looking to accomplish — better credit, start a business, learn taxes, etc."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
+          Submit Application &amp; Open WhatsApp
+        </button>
+        <p class="submit-note">Your application will be sent to <strong>BG LLC</strong> via WhatsApp at <strong>+1 (407) 515-5785</strong></p>
+
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round"/></svg>
+            Secure &amp; Confidential
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/></svg>
+            Financing Options
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Fast Response
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer style="background:var(--deep-green);color:rgba(255,255,255,0.6);text-align:center;padding:24px;">
+  <p style="font-size:13px;">© 2026 BG LLC. All rights reserved. &nbsp;·&nbsp; <a href="index.html" style="color:var(--light-green);">Back to Home</a></p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/14075155785" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-float-ring"></span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
+</a>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  const WA = 'https://wa.me/14075155785?text=';
+  const form = document.getElementById('classForm');
+  const toast = document.getElementById('toast');
+
+  function showToast(msg, isError){
+    toast.textContent = msg;
+    toast.style.background = isError ? '#c23' : 'var(--deep-green)';
+    toast.classList.add('show');
+    setTimeout(()=>toast.classList.remove('show'), 3800);
+  }
+
+  function v(name){ return (form.elements[name] && form.elements[name].value && form.elements[name].value.trim()) || ''; }
+
+  function getRadio(name){
+    const els = form.elements[name];
+    if(!els) return '';
+    for(let el of els){ if(el.checked) return el.value; }
+    return '';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const classSelected = getRadio('classSelected');
+    const contactMethod = getRadio('contactMethod');
+    const financing = getRadio('financing');
+
+    if(!v('fullName') || !v('phone') || !v('email') || !classSelected || !contactMethod || !financing || !v('goals')){
+      showToast('Please complete all required fields and select a class.', true);
+      return;
+    }
+
+    const msg =
+`BG LLC CLASS APPLICATION
+
+━━━ STUDENT INFORMATION ━━━
+Name: ${v('fullName')}
+Phone: ${v('phone')}
+Email: ${v('email')}
+
+━━━ CLASS DETAILS ━━━
+Selected Class: ${classSelected}
+Preferred Start Date: ${v('startDate') || 'Flexible'}
+Preferred Contact: ${contactMethod}
+Financing Needed: ${financing}
+
+━━━ GOALS ━━━
+${v('goals')}
+
+Submitted via BG LLC Website`;
+
+    showToast('Thank you! Your information has been prepared and you are being redirected to WhatsApp.');
+    setTimeout(()=>{
+      window.open(WA + encodeURIComponent(msg), '_blank');
+      form.reset();
+    }, 900);
+  });
+
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', ()=>{
+    navbar.classList.toggle('scrolled', window.scrollY > 80);
+  });
+})();
+</script>
+</body>
+</html>
