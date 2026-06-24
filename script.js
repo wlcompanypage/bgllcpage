@@ -486,6 +486,11 @@ const legalTexts = {
       <p>Welcome to Bergoa9a LLC. By accessing or using our website and services, you agree to be bound by these Terms of Use.</p>
       <h4>1. Services</h4>
       <p>Bergoa9a LLC provides loan referral services, financial education classes, credit repair assistance, immigration document preparation, notary services, certified translation, business formation and consulting.</p>
+      <h4>Credit Reporting Authorization</h4>
+      <p>
+      By using our loan-related services, users understand that credit verification
+      may be required as part of the evaluation process.
+      </p>
       <h4>2. No Financial Advice</h4>
       <p>All information provided is for educational purposes only and does not constitute financial, legal, or tax advice.</p>
       <h4>3. User Responsibilities</h4>
@@ -526,9 +531,49 @@ const legalTexts = {
     content: `<p>Bergoa9a LLC is a registered entity. SEC filings and regulatory information are available upon request.</p>`
   },
   disclosures: {
-    title: 'Disclosures and Agreements',
-    content: `<p>All loan products are subject to lender approval. Rates and terms may vary. Bergoa9a LLC is a referral and consulting service, not a direct lender.</p>`
-  },
+  title: 'Disclosures and Agreements',
+  content: `
+    <p><strong>Loan and Credit Disclosure</strong></p>
+
+    <p>
+    All loan products and financial services offered through Bergoa9a LLC
+    are subject to eligibility requirements, verification, and applicable laws.
+    Approval is not guaranteed and depends on the information provided by the applicant.
+    </p>
+
+    <h4>Credit Verification</h4>
+
+    <p>
+    As part of the loan application process, Bergoa9a LLC may obtain and review
+    consumer credit information from authorized credit reporting agencies to verify
+    credit history, financial responsibility, and eligibility.
+    </p>
+
+    <h4>Fair Credit Reporting Act (FCRA)</h4>
+
+    <p>
+    Credit information is collected, used, and disclosed in accordance with the
+    Fair Credit Reporting Act (FCRA), a federal law designed to promote accuracy,
+    fairness, and privacy of consumer credit information.
+    </p>
+
+    <h4>Applicant Authorization</h4>
+
+    <p>
+    By submitting an application, you authorize Bergoa9a LLC to verify your identity,
+    review provided information, and obtain credit-related information when necessary
+    to evaluate your request.
+    </p>
+
+    <h4>Loan Terms</h4>
+
+    <p>
+    Rates, terms, conditions, and available services may vary depending on individual
+    qualifications. Bergoa9a LLC does not guarantee approval and may act as a
+    referral or consulting service depending on the financial product requested.
+    </p>
+  `
+},
   'legal-requests': {
     title: 'Legal Requests',
     content: `<p>For legal requests, subpoenas, or DMCA notices, please contact us via WhatsApp at +1 (407) 515-5785.</p>`
