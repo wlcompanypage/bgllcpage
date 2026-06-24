@@ -1,4 +1,4 @@
-// script.js - BG LLC v2.0 — Full Lead Generation System
+// script.js - Bergoa9a LLC v2.0 — Full Lead Generation System
 
 const WA_NUMBER = '14075155785';
 const WA_BASE   = `https://wa.me/${WA_NUMBER}?text=`;
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast('Please complete all required fields.', true); return;
       }
       const msg =
-`BG LLC TAX PREPARATION APPLICATION
+`Bergoa9a LLC TAX PREPARATION APPLICATION
 
 ━━━ PERSONAL INFORMATION ━━━
 Name: ${getVal(taxForm,'fullName')}
@@ -111,7 +111,7 @@ Return Type: ${getVal(taxForm,'returnType')}
 ━━━ ADDITIONAL NOTES ━━━
 ${getVal(taxForm,'notes') || 'None'}
 
-Submitted via BG LLC Website`;
+Submitted via Bergoa9a LLC Website`;
       closeModal('taxModal');
       sendToWhatsApp(msg, taxForm);
     });
@@ -126,7 +126,7 @@ Submitted via BG LLC Website`;
         showToast('Please complete all required fields.', true); return;
       }
       const msg =
-`BG LLC PERSONAL CREDIT REPAIR APPLICATION
+`Bergoa9a LLC PERSONAL CREDIT REPAIR APPLICATION
 
 ━━━ PERSONAL INFORMATION ━━━
 Name: ${getVal(personalCreditForm,'fullName')}
@@ -140,7 +140,7 @@ Main Concerns: ${getVal(personalCreditForm,'concerns')}
 ━━━ FINANCIAL GOALS ━━━
 ${getVal(personalCreditForm,'goals') || 'Not specified'}
 
-Submitted via BG LLC Website`;
+Submitted via Bergoa9a LLC Website`;
       closeModal('personalCreditModal');
       sendToWhatsApp(msg, personalCreditForm);
     });
@@ -155,7 +155,7 @@ Submitted via BG LLC Website`;
         showToast('Please complete all required fields.', true); return;
       }
       const msg =
-`BG LLC BUSINESS CREDIT REPAIR APPLICATION
+`Bergoa9a LLC BUSINESS CREDIT REPAIR APPLICATION
 
 ━━━ BUSINESS INFORMATION ━━━
 Business Name: ${getVal(bizCreditForm,'bizName')}
@@ -170,7 +170,7 @@ Existing Business Credit: ${getVal(bizCreditForm,'existingCredit')}
 ━━━ FUNDING GOALS ━━━
 ${getVal(bizCreditForm,'fundingGoals') || 'Not specified'}
 
-Submitted via BG LLC Website`;
+Submitted via Bergoa9a LLC Website`;
       closeModal('bizCreditModal');
       sendToWhatsApp(msg, bizCreditForm);
     });
@@ -185,7 +185,7 @@ Submitted via BG LLC Website`;
         showToast('Please complete all required fields.', true); return;
       }
       const msg =
-`BG LLC BUSINESS FORMATION APPLICATION
+`Bergoa9a LLC BUSINESS FORMATION APPLICATION
 
 ━━━ PERSONAL INFORMATION ━━━
 Name: ${getVal(bizFormationForm,'fullName')}
@@ -200,7 +200,7 @@ Business Type: ${getVal(bizFormationForm,'bizType')}
 ━━━ SERVICES / PRODUCTS ━━━
 ${getVal(bizFormationForm,'services')}
 
-Submitted via BG LLC Website`;
+Submitted via Bergoa9a LLC Website`;
       closeModal('bizFormModal');
       sendToWhatsApp(msg, bizFormationForm);
     });
@@ -215,7 +215,7 @@ Submitted via BG LLC Website`;
         showToast('Please complete all required fields.', true); return;
       }
       const msg =
-`BG LLC IMMIGRATION SERVICES APPLICATION
+`Bergoa9a LLC IMMIGRATION SERVICES APPLICATION
 
 ━━━ PERSONAL INFORMATION ━━━
 Name: ${getVal(immigrationForm,'fullName')}
@@ -229,7 +229,7 @@ Current Status: ${getVal(immigrationForm,'currentStatus') || 'Not specified'}
 ━━━ ADDITIONAL INFORMATION ━━━
 ${getVal(immigrationForm,'additionalInfo') || 'None'}
 
-Submitted via BG LLC Website`;
+Submitted via Bergoa9a LLC Website`;
       closeModal('immigrationModal');
       sendToWhatsApp(msg, immigrationForm);
     });
@@ -244,7 +244,7 @@ Submitted via BG LLC Website`;
         showToast('Please complete all required fields.', true); return;
       }
       const msg =
-`BG LLC NOTARY SERVICES REQUEST
+`Bergoa9a LLC NOTARY SERVICES REQUEST
 
 ━━━ PERSONAL INFORMATION ━━━
 Name: ${getVal(notaryForm,'fullName')}
@@ -256,7 +256,7 @@ Document Type: ${getVal(notaryForm,'documentType')}
 Number of Documents: ${getVal(notaryForm,'numDocuments')}
 Preferred Appointment: ${getVal(notaryForm,'appointmentDate')}
 
-Submitted via BG LLC Website`;
+Submitted via Bergoa9a LLC Website`;
       closeModal('notaryModal');
       sendToWhatsApp(msg, notaryForm);
     });
@@ -271,7 +271,7 @@ Submitted via BG LLC Website`;
         showToast('Please complete all required fields.', true); return;
       }
       const msg =
-`BG LLC CERTIFIED TRANSLATION REQUEST
+`Bergoa9a LLC CERTIFIED TRANSLATION REQUEST
 
 ━━━ PERSONAL INFORMATION ━━━
 Name: ${getVal(translationForm,'fullName')}
@@ -284,7 +284,7 @@ Source Language: ${getVal(translationForm,'sourceLang')}
 Target Language: ${getVal(translationForm,'targetLang')}
 Number of Pages: ${getVal(translationForm,'numPages')}
 
-Submitted via BG LLC Website`;
+Submitted via Bergoa9a LLC Website`;
       closeModal('translationModal');
       sendToWhatsApp(msg, translationForm);
     });
@@ -299,7 +299,7 @@ Submitted via BG LLC Website`;
         showToast('Please complete all required fields.', true); return;
       }
       const msg =
-`BG LLC BUSINESS CONSULTING REQUEST
+`Bergoa9a LLC BUSINESS CONSULTING REQUEST
 
 ━━━ CONTACT INFORMATION ━━━
 Name: ${getVal(bizConsultingForm,'fullName')}
@@ -316,7 +316,7 @@ ${getVal(bizConsultingForm,'challenges')}
 ━━━ CONSULTING GOALS ━━━
 ${getVal(bizConsultingForm,'goals') || 'Not specified'}
 
-Submitted via BG LLC Website`;
+Submitted via Bergoa9a LLC Website`;
       closeModal('bizConsultingModal');
       sendToWhatsApp(msg, bizConsultingForm);
     });
@@ -341,7 +341,7 @@ Submitted via BG LLC Website`;
       }
 
       const text =
-`BG LLC GENERAL INQUIRY
+`Bergoa9a LLC GENERAL INQUIRY
 
 Name: ${fullName}
 Email: ${email || 'Not provided'}
@@ -349,7 +349,7 @@ Phone: ${phone}
 Service: ${service}
 Message: ${message || 'No message'}
 
-Submitted via BG LLC Website`;
+Submitted via Bergoa9a LLC Website`;
 
       sendToWhatsApp(text, form);
     });
@@ -466,7 +466,7 @@ Submitted via BG LLC Website`;
     document.querySelectorAll('img[loading="lazy"]').forEach(img => imageObserver.observe(img));
   }
 
-  console.log('%c✅ BG LLC v2.0 — Lead Generation System Loaded', 'color:#3F7A57;font-family:Fraunces;font-size:14px;');
+  console.log('%c✅ Bergoa9a LLC v2.0 — Lead Generation System Loaded', 'color:#3F7A57;font-family:Fraunces;font-size:14px;');
 
 }); // end DOMContentLoaded
 
@@ -483,14 +483,14 @@ const legalTexts = {
     title: 'Terms of Use',
     content: `
       <p><strong>Last updated: June 23, 2026</strong></p>
-      <p>Welcome to BG LLC. By accessing or using our website and services, you agree to be bound by these Terms of Use.</p>
+      <p>Welcome to Bergoa9a LLC. By accessing or using our website and services, you agree to be bound by these Terms of Use.</p>
       <h4>1. Services</h4>
-      <p>BG LLC provides loan referral services, financial education classes, credit repair assistance, immigration document preparation, notary services, certified translation, business formation and consulting.</p>
+      <p>Bergoa9a LLC provides loan referral services, financial education classes, credit repair assistance, immigration document preparation, notary services, certified translation, business formation and consulting.</p>
       <h4>2. No Financial Advice</h4>
       <p>All information provided is for educational purposes only and does not constitute financial, legal, or tax advice.</p>
       <h4>3. User Responsibilities</h4>
       <p>You agree to provide accurate information and use our services lawfully.</p>
-      <p style="margin-top:30px;opacity:0.7;font-size:13px;">© 2026 BG LLC. All rights reserved.</p>
+      <p style="margin-top:30px;opacity:0.7;font-size:13px;">© 2026 Bergoa9a LLC. All rights reserved.</p>
     `
   },
   privacy: {
@@ -519,15 +519,15 @@ const legalTexts = {
   },
   accessibility: {
     title: 'Accessibility Statement',
-    content: `<p>BG LLC is committed to ensuring digital accessibility for all users. We strive to meet WCAG 2.1 Level AA standards.</p>`
+    content: `<p>Bergoa9a LLC is committed to ensuring digital accessibility for all users. We strive to meet WCAG 2.1 Level AA standards.</p>`
   },
   sec: {
     title: 'SEC Filing',
-    content: `<p>BG LLC is a registered entity. SEC filings and regulatory information are available upon request.</p>`
+    content: `<p>Bergoa9a LLC is a registered entity. SEC filings and regulatory information are available upon request.</p>`
   },
   disclosures: {
     title: 'Disclosures and Agreements',
-    content: `<p>All loan products are subject to lender approval. Rates and terms may vary. BG LLC is a referral and consulting service, not a direct lender.</p>`
+    content: `<p>All loan products are subject to lender approval. Rates and terms may vary. Bergoa9a LLC is a referral and consulting service, not a direct lender.</p>`
   },
   'legal-requests': {
     title: 'Legal Requests',
@@ -535,7 +535,7 @@ const legalTexts = {
   },
   licenses: {
     title: 'Licenses',
-    content: `<p>BG LLC operates under applicable state and federal licenses for financial services and document preparation.</p>`
+    content: `<p>Bergoa9a LLC operates under applicable state and federal licenses for financial services and document preparation.</p>`
   }
 };
 
