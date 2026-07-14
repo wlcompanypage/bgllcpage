@@ -76,6 +76,73 @@
   .svc-modal-body{padding:22px 18px;}
   .svc-modal-header{padding:22px 20px;}
 }
+
+/* ===== FINANCING EVALUATION TRUST SECTION ===== */
+.financing-eval{background:var(--white);padding-top:0;}
+.financing-eval-wrap{max-width:900px;margin:0 auto;padding:0 28px;}
+.financing-eval-card{
+  background:var(--white);
+  border:1.5px solid rgba(63,122,87,0.18);
+  border-radius:22px;
+  box-shadow:0 24px 55px -26px rgba(22,36,28,0.28);
+  padding:48px 48px 42px;
+}
+@media(max-width:640px){.financing-eval-card{padding:32px 24px 28px;}}
+.financing-eval-icon{
+  width:64px;height:64px;border-radius:16px;
+  background:linear-gradient(135deg,var(--mid-green),var(--deep-green));
+  display:flex;align-items:center;justify-content:center;margin:0 auto 22px;
+  box-shadow:0 14px 30px -12px rgba(46,100,74,0.45);
+}
+.financing-eval-icon svg{width:32px;height:32px;stroke:#fff;}
+.financing-eval-card h2{
+  text-align:center;font-size:clamp(22px,3vw,30px);margin-bottom:12px;color:var(--deep-green);
+  line-height:1.2;
+}
+.financing-eval-card .fin-subtitle{
+  text-align:center;color:#544c3a;font-size:15.5px;max-width:600px;margin:0 auto 28px;line-height:1.65;
+}
+.fin-explain{
+  background:var(--pale-green);border-radius:14px;padding:22px 26px;margin-bottom:28px;
+  border:1px solid rgba(63,122,87,0.14);
+}
+.fin-explain p{font-size:14.5px;color:#3a3428;margin-bottom:12px;line-height:1.65;}
+.fin-explain p:last-child{margin-bottom:0;font-weight:600;color:var(--deep-green);}
+
+.fin-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;}
+@media(max-width:600px){.fin-check-grid{grid-template-columns:1fr;}}
+.fin-check-item{
+  display:flex;align-items:flex-start;gap:12px;
+  background:var(--cream);border:1px solid rgba(51,64,31,0.1);
+  border-radius:12px;padding:14px 16px;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+}
+.fin-check-item:hover{transform:translateY(-3px);box-shadow:0 12px 26px -16px rgba(42,35,22,0.3);border-color:rgba(63,122,87,0.3);}
+.fin-check-item .check-ic{
+  width:24px;height:24px;border-radius:50%;flex-shrink:0;
+  background:var(--deep-green);display:flex;align-items:center;justify-content:center;margin-top:1px;
+}
+.fin-check-item .check-ic svg{width:13px;height:13px;stroke:#fff;stroke-width:3;}
+.fin-check-item span.txt{font-size:13.5px;font-weight:600;color:#3a3428;line-height:1.45;}
+.fin-check-item.wide{grid-column:1 / -1;}
+
+.fin-legal-box{
+  background:#f3f2ee;border:1px solid rgba(51,64,31,0.12);border-radius:12px;
+  padding:20px 22px;margin-bottom:30px;
+}
+.fin-legal-box p{font-size:12.5px;color:#6b6250;line-height:1.7;}
+
+.fin-cta-btn{
+  width:100%;background:linear-gradient(135deg,var(--deep-green),var(--mid-green));
+  color:#fff;padding:18px 28px;border-radius:999px;font-size:16px;font-weight:700;
+  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease);
+  box-shadow:0 16px 32px -12px rgba(46,100,74,0.5);
+  text-decoration:none;
+}
+.fin-cta-btn:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(46,100,74,0.6);}
+.fin-cta-btn svg{width:19px;height:19px;transition:transform .25s var(--ease);}
+.fin-cta-btn:hover svg{transform:translateX(4px);}
 </style>
 </head>
 <body>
@@ -152,6 +219,57 @@
   <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" fill="none" aria-hidden="true">
     <path d="M0 40C240 90 480 0 720 30C960 60 1200 10 1440 50V90H0V40Z" fill="#1B3A2B"/>
   </svg>
+</section>
+
+<!-- ===== FINANCING EVALUATION TRUST SECTION ===== -->
+<section class="financing-eval">
+  <div class="financing-eval-wrap">
+    <div class="financing-eval-card reveal">
+      <div class="financing-eval-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2>Request Your Financing Evaluation Today</h2>
+      <p class="fin-subtitle">Our goal is to help you find the financing option that best fits your needs while protecting your personal information throughout the entire process.</p>
+
+      <div class="fin-explain">
+        <p>Bergoa9a Finance LLC first evaluates every application to determine whether financing may be offered directly through our company, where permitted by applicable licensing requirements.</p>
+        <p>If we are unable to provide financing directly, and only with your authorization, your application may be submitted to one or more trusted third-party financial providers for additional consideration.</p>
+        <p>Your personal information is never shared without your consent.</p>
+      </div>
+
+      <div class="fin-check-grid">
+        <div class="fin-check-item">
+          <span class="check-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="txt">Initial financing evaluation by Bergoa9a Finance LLC</span>
+        </div>
+        <div class="fin-check-item">
+          <span class="check-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="txt">Credit verification may be required during the approval process</span>
+        </div>
+        <div class="fin-check-item">
+          <span class="check-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="txt">Optional referral to trusted lending partners with your authorization</span>
+        </div>
+        <div class="fin-check-item">
+          <span class="check-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="txt">Independent credit decisions made by each lender</span>
+        </div>
+        <div class="fin-check-item wide">
+          <span class="check-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="txt">Your information remains protected throughout the process</span>
+        </div>
+      </div>
+
+      <div class="fin-legal-box">
+        <p>Submitting an application does not guarantee approval. Loan approval, interest rates, loan amounts and terms are determined after verification and underwriting. Bergoa9a Finance LLC may evaluate applications for financing directly where authorized. If financing cannot be provided directly, applicants may choose to authorize Bergoa9a Finance LLC to share their application with trusted third-party financial providers for additional review. Personal information will never be shared without the applicant's consent.</p>
+      </div>
+
+      <a href="personal-loan-application.html" class="fin-cta-btn">
+        Start My Financing Evaluation
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- ===== SERVICES ===== -->
