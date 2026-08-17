@@ -1,218 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bergoa9a LLC | Taxes, Credit Repair, Business Services & Financial Education</title>
-<meta property="og:title" content="Bergoa9a LLC | Financial Services">
-<meta property="og:image" content="gbol.png">
-<meta property="og:type" content="website">
-<link rel="icon" href="gbol.png" type="image/png" />
-<meta name="description" content="Bergoa9a LLC provides financial services, educational classes and credit repair assistance to help clients achieve financial growth.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-/* ===== SERVICE MODAL OVERLAY ===== */
-.svc-modal{
-  position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:1300;
-  display:none;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto;
-}
-.svc-modal.open{display:flex;}
-.svc-modal-box{
-  background:var(--white);border-radius:20px;width:100%;max-width:720px;
-  margin:auto;box-shadow:0 24px 60px rgba(0,0,0,0.35);overflow:hidden;
-  animation:modalSlideUp .35s var(--ease) both;
-}
-@keyframes modalSlideUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-.svc-modal-header{
-  background:linear-gradient(135deg,var(--deep-green),var(--mid-green));
-  padding:28px 32px;display:flex;align-items:center;justify-content:space-between;
-}
-.svc-modal-header h2{color:var(--white);font-size:22px;margin:0;}
-.svc-modal-close{
-  background:rgba(255,255,255,0.15);border:none;color:var(--white);
-  width:36px;height:36px;border-radius:50%;font-size:20px;line-height:1;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  transition:background .2s;flex-shrink:0;
-}
-.svc-modal-close:hover{background:rgba(255,255,255,0.28);}
-.svc-modal-body{padding:32px;}
-.svc-modal-body .form-section-title{
-  font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--deep-green);
-  margin:22px 0 14px;padding-bottom:6px;border-bottom:1.5px solid var(--pale-green);
-  letter-spacing:0.02em;
-}
-.svc-modal-body .form-section-title:first-child{margin-top:0;}
-.svc-modal-body .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:0;}
-.svc-modal-body .field{margin-bottom:14px;}
-.svc-modal-body .field label{font-size:12.5px;font-weight:600;color:var(--deep-green);display:block;margin-bottom:5px;}
-.svc-modal-body .field input,
-.svc-modal-body .field select,
-.svc-modal-body .field textarea{
-  width:100%;padding:12px 15px;border-radius:10px;border:1.5px solid rgba(51,64,31,0.16);
-  font-family:'Inter',sans-serif;font-size:14px;background:var(--cream);
-  transition:border-color .2s,box-shadow .2s;
-}
-.svc-modal-body .field input:focus,
-.svc-modal-body .field select:focus,
-.svc-modal-body .field textarea:focus{
-  border-color:var(--mid-green);outline:none;box-shadow:0 0 0 3px rgba(63,122,87,0.15);
-}
-.svc-modal-body .field textarea{resize:vertical;min-height:90px;}
-.consent-row{display:flex;align-items:flex-start;gap:10px;margin:18px 0;}
-.consent-row input[type=checkbox]{width:17px;height:17px;flex-shrink:0;margin-top:2px;accent-color:var(--deep-green);}
-.consent-row label{font-size:13.5px;color:#4a4534;font-weight:500;}
-.modal-submit{
-  width:100%;background:var(--deep-green);color:var(--white);
-  padding:15px 24px;border-radius:999px;font-size:15px;font-weight:700;
-  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;
-  transition:background .25s,transform .2s;margin-top:6px;
-}
-.modal-submit:hover{background:var(--deep-green-2);transform:translateY(-2px);}
-.form-note-sm{font-size:12px;color:#6b6250;margin-top:10px;text-align:center;}
-@media(max-width:600px){
-  .svc-modal-body .form-row{grid-template-columns:1fr;}
-  .svc-modal-body{padding:22px 18px;}
-  .svc-modal-header{padding:22px 20px;}
-}
-
-/* ===== FINANCING EVALUATION TRUST SECTION ===== */
-.financing-eval{background:var(--white);padding-top:0;}
-.financing-eval-wrap{max-width:900px;margin:0 auto;padding:0 28px;}
-.financing-eval-card{
-  background:var(--white);
-  border:1.5px solid rgba(63,122,87,0.18);
-  border-radius:22px;
-  box-shadow:0 24px 55px -26px rgba(22,36,28,0.28);
-  padding:48px 48px 42px;
-}
-@media(max-width:640px){.financing-eval-card{padding:32px 24px 28px;}}
-.financing-eval-icon{
-  width:64px;height:64px;border-radius:16px;
-  background:linear-gradient(135deg,var(--mid-green),var(--deep-green));
-  display:flex;align-items:center;justify-content:center;margin:0 auto 22px;
-  box-shadow:0 14px 30px -12px rgba(46,100,74,0.45);
-}
-.financing-eval-icon svg{width:32px;height:32px;stroke:#fff;}
-.financing-eval-card h2{
-  text-align:center;font-size:clamp(22px,3vw,30px);margin-bottom:12px;color:var(--deep-green);
-  line-height:1.2;
-}
-.financing-eval-card .fin-subtitle{
-  text-align:center;color:#544c3a;font-size:15.5px;max-width:600px;margin:0 auto 28px;line-height:1.65;
-}
-.fin-explain{
-  background:var(--pale-green);border-radius:14px;padding:22px 26px;margin-bottom:28px;
-  border:1px solid rgba(63,122,87,0.14);
-}
-.fin-explain p{font-size:14.5px;color:#3a3428;margin-bottom:12px;line-height:1.65;}
-.fin-explain p:last-child{margin-bottom:0;font-weight:600;color:var(--deep-green);}
-
-.fin-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;}
-@media(max-width:600px){.fin-check-grid{grid-template-columns:1fr;}}
-.fin-check-item{
-  display:flex;align-items:flex-start;gap:12px;
-  background:var(--cream);border:1px solid rgba(51,64,31,0.1);
-  border-radius:12px;padding:14px 16px;
-  transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
-}
-.fin-check-item:hover{transform:translateY(-3px);box-shadow:0 12px 26px -16px rgba(42,35,22,0.3);border-color:rgba(63,122,87,0.3);}
-.fin-check-item .check-ic{
-  width:24px;height:24px;border-radius:50%;flex-shrink:0;
-  background:var(--deep-green);display:flex;align-items:center;justify-content:center;margin-top:1px;
-}
-.fin-check-item .check-ic svg{width:13px;height:13px;stroke:#fff;stroke-width:3;}
-.fin-check-item span.txt{font-size:13.5px;font-weight:600;color:#3a3428;line-height:1.45;}
-.fin-check-item.wide{grid-column:1 / -1;}
-
-.fin-legal-box{
-  background:#f3f2ee;border:1px solid rgba(51,64,31,0.12);border-radius:12px;
-  padding:20px 22px;margin-bottom:30px;
-}
-.fin-legal-box p{font-size:12.5px;color:#6b6250;line-height:1.7;}
-
-.fin-cta-btn{
-  width:100%;background:linear-gradient(135deg,var(--deep-green),var(--mid-green));
-  color:#fff;padding:18px 28px;border-radius:999px;font-size:16px;font-weight:700;
-  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;
-  transition:transform .2s var(--ease), box-shadow .2s var(--ease);
-  box-shadow:0 16px 32px -12px rgba(46,100,74,0.5);
-  text-decoration:none;
-}
-.fin-cta-btn:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(46,100,74,0.6);}
-.fin-cta-btn svg{width:19px;height:19px;transition:transform .25s var(--ease);}
-.fin-cta-btn:hover svg{transform:translateX(4px);}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bergoa9a LLC | Personal Loans</title>
+  <meta name="description" content="Explore Personal Loan financing options with Bergoa9a LLC. Start your application and learn how the financing evaluation process works.">
+  <meta property="og:title" content="Bergoa9a LLC | Personal Loans">
+  <meta property="og:description" content="Explore Personal Loan financing options and start your application with Bergoa9a LLC.">
+  <meta property="og:image" content="gbol.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="gbol.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
 <header class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="#home" class="logo-link" aria-label="Bergoa9a LLC home">
       <img src="gbol.png" alt="Bergoa9a LLC logo"
-           onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'logo-fallback',innerHTML:'<div class=badge>BG</div><div><span class=wordmark>Bergoa9a LLC</span><small>Loans · Master Class · Credit Repair</small></div>'}))">
+           onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'logo-fallback',innerHTML:'<div class=badge>BG</div><div><span class=wordmark>Bergoa9a LLC</span><small>Personal Loans</small></div>'}))">
     </a>
     <nav class="menu" aria-label="Primary">
       <a href="#home">Home</a>
-      <a href="#services">Services</a>
+      <a href="#services">Personal Loans</a>
       <a href="#how-it-works">How It Works</a>
-      <a href="#about">About Us</a>
+      <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn btn-whatsapp btn-small" href="https://wa.me/14075155785" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83zm-5.56 13.5h-.01a7.3 7.3 0 0 1-3.72-1.02l-.27-.16-2.77.88.88-2.7-.18-.28a7.3 7.3 0 0 1-1.12-3.9c0-4.04 3.29-7.33 7.34-7.33a7.3 7.3 0 0 1 5.18 2.15 7.27 7.27 0 0 1 2.15 5.18c0 4.05-3.3 7.34-7.34 7.34zm4.02-5.5c-.22-.11-1.3-.64-1.5-.72-.2-.07-.35-.11-.5.11-.14.22-.56.71-.7.86-.13.14-.26.16-.48.05-.65-.32-1.27-.7-1.85-1.13a7.07 7.07 0 0 1-1.3-1.62c-.14-.24 0-.36.13-.5.13-.14.3-.36.43-.54.13-.18.04-.34-.05-.5-.09-.16-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.38h-.43c-.14 0-.38.05-.58.27-.2.22-.78.76-.78 1.85s.8 2.15.92 2.3c.11.14 1.55 2.37 3.76 3.23 2.21.87 2.21.58 2.6.55.4-.04 1.3-.53 1.48-1.04.18-.5.18-.93.13-1.04-.05-.1-.2-.16-.42-.27z"/></svg>
-        WhatsApp
-      </a>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <a class="btn btn-primary btn-small" href="personal-loan-application.html">Apply Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
 
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <div class="mobile-menu-top">
     <span style="color:#fff;font-family:'Fraunces',serif;font-size:22px;font-weight:700;">Bergoa9a LLC</span>
     <button id="closeMobileMenu" aria-label="Close menu">&times;</button>
   </div>
   <a href="#home">Home</a>
-  <a href="#services">Services</a>
+  <a href="#services">Personal Loans</a>
   <a href="#how-it-works">How It Works</a>
-  <a href="#about">About Us</a>
+  <a href="#about">About</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
-  <a class="btn btn-whatsapp" href="https://wa.me/14075155785" target="_blank" rel="noopener" style="width:fit-content;">Chat on WhatsApp</a>
+  <a class="btn btn-primary" href="personal-loan-application.html" style="width:fit-content;">Start Application</a>
 </div>
 
-<!-- ===== HERO ===== -->
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="hero-copy reveal-init">
-      <span class="eyebrow">Financial growth, made personal</span>
-      <h1>Financial Solutions and <em>Educational Services</em> at Your Reach</h1>
-      <p class="lead">Bergoa9a LLC provides reliable financial solutions, educational services and credit improvement assistance designed to help individuals build a stronger financial future.</p>
+      <span class="eyebrow">Personal Loans</span>
+      <h1>Personal financing, <em>made clear.</em></h1>
+      <p class="lead">Bergoa9a LLC helps individuals explore Personal Loan financing options through a guided application and review process.</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Contact Us</a>
-        <a href="#services" class="btn btn-secondary">Explore Services</a>
+        <a href="personal-loan-application.html" class="btn btn-primary">Start My Financing Evaluation</a>
+        <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
       </div>
       <div class="hero-stats">
-        <div><strong>10+</strong><span>Services Offered</span></div>
-        <div><strong>1:1</strong><span>Personalized Guidance</span></div>
-        <div><strong>6 Days</strong><span>Weekly Availability</span></div>
+        <div><strong>1:1</strong><span>Personalized Assistance</span></div>
+        <div><strong>4</strong><span>Clear Application Steps</span></div>
+        <div><strong>Secure</strong><span>Information Handling</span></div>
       </div>
     </div>
     <div class="hero-visual reveal-init reveal-init-delay">
       <div class="frame">
-        <img class="img-zoom" src="herobg.png" alt="Bergoa9a LLC">
+        <img class="img-zoom" src="herobg.png" alt="Personal Loan financing consultation">
       </div>
       <div class="growth-card">
         <svg viewBox="0 0 24 24" fill="none" stroke="#3F7A57" stroke-width="2"><path d="M3 17l5-5 4 4 8-8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8h6v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><strong>Steady Growth</strong><span>Built for your goals</span></div>
+        <div><strong>Personal Loans</strong><span>Explore your financing options</span></div>
       </div>
     </div>
   </div>
@@ -221,533 +84,332 @@
   </svg>
 </section>
 
-<!-- ===== FINANCING EVALUATION TRUST SECTION ===== -->
 <section class="financing-eval">
   <div class="financing-eval-wrap">
-    <div class="financing-eval-card reveal">
+    <div class="financing-eval-card">
+
       <div class="financing-eval-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+          <path d="M9 12l2 2 4-4"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+        </svg>
       </div>
-      <h2>Request Your Financing Evaluation Today</h2>
-      <p class="fin-subtitle">Our goal is to help you find the financing option that best fits your needs while protecting your personal information throughout the entire process.</p>
+
+      <h2>Request Your Personal Loan Financing Evaluation</h2>
+
+      <p class="fin-subtitle">
+        Start with your application and receive guidance through
+        the financing evaluation process. Available options depend
+        on your application and applicable eligibility criteria.
+      </p>
 
       <div class="fin-explain">
-        <p>Bergoa9a Finance LLC first evaluates every application to determine whether financing may be offered directly through our company, where permitted by applicable licensing requirements.</p>
-        <p>If we are unable to provide financing directly, and only with your authorization, your application may be submitted to one or more trusted third-party financial providers for additional consideration.</p>
-        <p>Your personal information is never shared without your consent.</p>
+        <p>
+          Your application may be reviewed to determine whether
+          a financing option may be available through the
+          applicable process.
+        </p>
+
+        <p>
+          When applicable, and with your authorization, your
+          application may be shared with one or more lending
+          partners for additional consideration.
+        </p>
+
+        <p>
+          Your application does not guarantee approval, funding,
+          or any particular loan terms.
+        </p>
       </div>
 
       <div class="fin-check-grid">
+
         <div class="fin-check-item">
-          <span class="check-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span class="txt">Initial financing evaluation by Bergoa9a Finance LLC</span>
+          <span class="check-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20 6L9 17l-5-5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+            </svg>
+          </span>
+
+          <span class="txt">
+            Personal Loan application and financing evaluation
+          </span>
         </div>
+
         <div class="fin-check-item">
-          <span class="check-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span class="txt">Credit verification may be required during the approval process</span>
+          <span class="check-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20 6L9 17l-5-5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+            </svg>
+          </span>
+
+          <span class="txt">
+            Information reviewed for financing consideration
+          </span>
         </div>
+
         <div class="fin-check-item">
-          <span class="check-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span class="txt">Optional referral to trusted lending partners with your authorization</span>
+          <span class="check-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20 6L9 17l-5-5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+            </svg>
+          </span>
+
+          <span class="txt">
+            Optional sharing with lending partners when authorized
+          </span>
         </div>
+
         <div class="fin-check-item">
-          <span class="check-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span class="txt">Independent credit decisions made by each lender</span>
+          <span class="check-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20 6L9 17l-5-5"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+            </svg>
+          </span>
+
+          <span class="txt">
+            Loan decisions and terms may vary by applicant and provider
+          </span>
         </div>
-        <div class="fin-check-item wide">
-          <span class="check-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span class="txt">Your information remains protected throughout the process</span>
-        </div>
+
       </div>
 
       <div class="fin-legal-box">
-        <p>Submitting an application does not guarantee approval. Loan approval, interest rates, loan amounts and terms are determined after verification and underwriting. Bergoa9a Finance LLC may evaluate applications for financing directly where authorized. If financing cannot be provided directly, applicants may choose to authorize Bergoa9a Finance LLC to share their application with trusted third-party financial providers for additional review. Personal information will never be shared without the applicant's consent.</p>
+        <p>
+          Submitting an application does not guarantee approval
+          or funding. Any available financing is subject to the
+          applicable review, eligibility requirements, terms
+          and conditions.
+        </p>
       </div>
 
-      <a href="personal-loan-application.html" class="fin-cta-btn">
-        Start My Financing Evaluation
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <a
+        class="fin-cta-btn"
+        href="personal-loan-application.html"
+      >
+        Start Your Personal Loan Application
+
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M13 6l6 6-6 6"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+        </svg>
       </a>
+
     </div>
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
 <section class="services" id="services">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Our Services</span>
-      <h2>How We Help You Move Forward</h2>
-      <p>Each service is designed so you know exactly what to expect — and we have all the information we need to serve you efficiently.</p>
+      <span class="eyebrow">Personal Loans</span>
+      <h2>One focused service, built around your financing request</h2>
+      <p>Explore the Personal Loan process, understand the next steps and submit your application when you're ready.</p>
     </div>
-    <div class="service-grid service-grid--wide">
-
-      <!-- Personal Loans -->
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/></svg></div>
+    <div class="loan-feature reveal">
+      <div class="loan-feature-copy">
         <h3>Personal Loans</h3>
-        <p>Flexible financial solutions designed to cover personal needs, unexpected expenses and planned goals.</p>
-        <ul class="service-details">
-          <li><span class="label">Loan Type</span><span class="value">Personal Financing</span></li>
-          <li><span class="label">Process</span><span class="value">Apply → Review → Approval</span></li>
-          <li><span class="label">Support</span><span class="value">Personalized Assistance</span></li>
-          <li><span class="label">Contact</span><span class="value">WhatsApp Consultation</span></li>
+        <p>A Personal Loan may be considered for personal financial needs. Bergoa9a LLC provides a straightforward starting point for submitting your request and understanding how the financing review works.</p>
+        <ul class="loan-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Guided application process</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalized assistance with your request</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Review of the information you provide</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Clear next steps after review</li>
         </ul>
-        <a class="btn btn-card" href="personal-loan-application.html">
-          Apply for a Loan
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <a href="personal-loan-application.html" class="btn btn-primary">Apply for a Personal Loan</a>
       </div>
-
-      <!-- Tax Preparation -->
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke-linecap="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round"/></svg></div>
-        <h3>Tax Preparation</h3>
-        <p>Professional tax services for individuals, self-employed, LLCs, S-Corporations and small businesses. We maximize your tax benefits while ensuring federal and state compliance.</p>
-        <ul class="service-details service-details--tags">
-          <li>Personal &amp; corporate returns</li>
-          <li>W-2, 1099, 1095-A, 1098-T</li>
-          <li>Amended returns</li>
-          <li>Tax planning</li>
-          <li>IRS notice assistance</li>
-          <li>Tax consulting</li>
-        </ul>
-        <button class="btn btn-card" onclick="openModal('taxModal')">
-          Apply Now
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-
-      <!-- Personal Credit Repair -->
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" stroke-linecap="round"/></svg></div>
-        <h3>Personal Credit Repair</h3>
-        <p>We improve your credit profile through detailed analysis and law-backed strategies to correct inaccurate, incomplete or unverifiable information on your reports.</p>
-        <ul class="service-details service-details--tags">
-          <li>Full credit analysis</li>
-          <li>Bureau disputes</li>
-          <li>Debt validation</li>
-          <li>Error removal</li>
-          <li>Credit rebuilding strategies</li>
-          <li>Personalized financial education</li>
-        </ul>
-        <button class="btn btn-card" onclick="openModal('personalCreditModal')">
-          Get Started
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-
-      <!-- Business Credit Repair -->
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round"/><path d="M9 22V12h6v10" stroke-linecap="round"/></svg></div>
-        <h3>Business Credit Repair</h3>
-        <p>We establish, strengthen and optimize your company's credit profile to facilitate access to financing, lines of credit and growth opportunities.</p>
-        <ul class="service-details service-details--tags">
-          <li>Business profile creation</li>
-          <li>D-U-N-S registration</li>
-          <li>Business credit development</li>
-          <li>Net-30 account setup</li>
-          <li>Commercial report monitoring</li>
-          <li>Financing strategies</li>
-        </ul>
-        <button class="btn btn-card" onclick="openModal('bizCreditModal')">
-          Get Started
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-
-      <!-- Business Formation -->
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke-linecap="round"/><path d="M12 12v4M10 14h4" stroke-linecap="round"/></svg></div>
-        <h3>Business Formation</h3>
-        <p>Complete assistance for the formation and structuring of businesses in the U.S., helping entrepreneurs establish solid and professional operations.</p>
-        <ul class="service-details service-details--tags">
-          <li>LLC registration</li>
-          <li>Corporation incorporation</li>
-          <li>EIN obtainment</li>
-          <li>Operating agreements</li>
-          <li>Annual reports</li>
-          <li>Business consulting</li>
-        </ul>
-        <button class="btn btn-card" onclick="openModal('bizFormModal')">
-          Apply Now
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-
-      <!-- Immigration Services -->
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke-linecap="round"/><path d="M2 12h20" stroke-linecap="round"/></svg></div>
-        <h3>Immigration Services</h3>
-        <p>Professional assistance in the preparation and organization of immigration documentation for individuals and families seeking to regularize or improve their status.</p>
-        <ul class="service-details service-details--tags">
-          <li>Citizenship applications</li>
-          <li>Residency renewal</li>
-          <li>Family petitions</li>
-          <li>Status adjustments</li>
-          <li>Immigration form preparation</li>
-          <li>Evidence organization</li>
-        </ul>
-        <button class="btn btn-card" onclick="openModal('immigrationModal')">
-          Apply Now
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-
-      <!-- Notary Services -->
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round"/></svg></div>
-        <h3>Notary Services</h3>
-        <p>Notarial services for personal, corporate and legal documents, ensuring the authenticity and validity of required signatures.</p>
-        <ul class="service-details service-details--tags">
-          <li>Document notarization</li>
-          <li>Sworn statements</li>
-          <li>Powers of attorney</li>
-          <li>Legal forms</li>
-          <li>Corporate documentation</li>
-        </ul>
-        <button class="btn btn-card" onclick="openModal('notaryModal')">
-          Request Appointment
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-
-      <!-- Certified Translation -->
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Certified Translation</h3>
-        <p>Professional translations for personal, academic, legal and immigration documents, meeting the requirements of government agencies and private entities.</p>
-        <ul class="service-details service-details--tags">
-          <li>Birth certificates</li>
-          <li>Marriage certificates</li>
-          <li>Diplomas &amp; transcripts</li>
-          <li>Legal documents</li>
-          <li>Immigration documents</li>
-        </ul>
-        <button class="btn btn-card" onclick="openModal('translationModal')">
-          Apply Now
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-
-      <!-- Financial Education -->
-      <div class="service-card service-card--featured reveal">
-        <div class="service-badge"></div>
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.7 3 6 3s6-1.34 6-3v-5" stroke-linecap="round"/></svg></div>
-        <h3>Financial Education &amp; Training</h3>
-        <p>Educational programs designed to provide practical knowledge that enables you to generate income and improve financial stability.</p>
-        <ul class="service-details service-details--tags">
-          <li>Credit repair</li>
-          <li>Business credit</li>
-          <li>Tax preparation</li>
-          <li>Business formation</li>
-          <li>Financial literacy</li>
-          <li>Business development</li>
-        </ul>
-        <div class="service-pricing">
-          <div class="price-tag">
-            <span class="price-amount">$1,500</span>
-            <span class="price-label">per workshop</span>
-          </div>
-          <div class="price-note">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round"/></svg>
-            Company financing available
-          </div>
+      <div class="loan-feature-visual">
+        <div class="loan-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h5" stroke-linecap="round"/></svg>
         </div>
-        <a class="btn btn-card" href="class-application.html">
-          Apply Today
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <h4>A simple place to begin</h4>
+        <p>Submit the information requested in the Personal Loan application. The review process can then determine what financing options, if any, may be available.</p>
+        <div class="loan-disclaimer">Loan availability, eligibility, terms and conditions are not guaranteed and may vary based on the application and applicable provider.</div>
       </div>
-
-      <!-- Business Consulting -->
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round"/></svg></div>
-        <h3>Business Consulting</h3>
-        <p>We help entrepreneurs and business owners develop strategies to strengthen operations, improve processes and achieve their growth objectives.</p>
-        <ul class="service-details service-details--tags">
-          <li>Business plans</li>
-          <li>Corporate structuring</li>
-          <li>Growth strategies</li>
-          <li>Administrative optimization</li>
-          <li>Financial advisory</li>
-        </ul>
-        <button class="btn btn-card" onclick="openModal('bizConsultingModal')">
-          Request Consultation
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-
-      
-
     </div>
-
-    <!-- Bottom CTA -->
-    <div class="services-cta reveal">
-      <a href="#contact" class="btn btn-primary">Contact Us Today</a>
-    </div>
-
   </div>
 </section>
 
-<!-- ===== HOW IT WORKS ===== -->
 <section class="how" id="how-it-works">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">How It Works</span>
-      <h2>From first message to financial progress</h2>
-      <p>A simple, guided path — no office visit required.</p>
+      <h2>A clear Personal Loan application process</h2>
+      <p>Four straightforward stages from application to next steps.</p>
     </div>
     <div class="steps-grid">
-      <div class="step-card reveal">
-        <span class="step-num">01</span>
-        <h3>Fill Out Your Form</h3>
-        <p>Select your service, complete the application form and submit your information securely.</p>
-      </div>
+      <div class="step-card reveal"><span class="step-num">01</span><h3>Submit Your Application</h3><p>Complete the Personal Loan application with the information requested.</p></div>
       <div class="step-connector reveal" aria-hidden="true"></div>
-      <div class="step-card reveal">
-        <span class="step-num">02</span>
-        <h3>Connect on WhatsApp</h3>
-        <p>Your information is sent directly to our team via WhatsApp — we review it and reach out promptly.</p>
-      </div>
+      <div class="step-card reveal"><span class="step-num">02</span><h3>Application Review</h3><p>Your submitted information is reviewed as part of the financing evaluation process.</p></div>
       <div class="step-connector reveal" aria-hidden="true"></div>
-      <div class="step-card reveal">
-        <span class="step-num">03</span>
-        <h3>Start Your Financial Journey</h3>
-        <p>Move forward with a clear plan, ongoing support and a team invested in your progress.</p>
-      </div>
+      <div class="step-card reveal"><span class="step-num">03</span><h3>Financing Decision</h3><p>Any financing decision is subject to applicable review, eligibility and provider requirements.</p></div>
+    </div>
+    <div class="steps-grid" style="grid-template-columns:1fr;margin-top:20px;">
+      <div class="step-card reveal"><span class="step-num">04</span><h3>Next Steps</h3><p>If an option is available, you can review the applicable next steps, terms and conditions before proceeding.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
 <section class="about" id="about">
   <div class="container about-inner">
-    <div class="about-visual reveal">
-      <img class="img-zoom" src="gbol.png" alt="Bergoa9a LLC">
-    </div>
+    <div class="about-visual reveal"><img class="img-zoom" src="gbol.png" alt="Bergoa9a LLC"></div>
     <div class="about-content reveal">
       <span class="eyebrow">About Bergoa9a LLC</span>
-      <h2>Our mission is to help you build what's next</h2>
-      <p>Bergoa9a LLC is committed to providing accessible financial solutions and educational resources. Our mission is to support individuals through reliable services, personalized attention and professional guidance.</p>
+      <h2>A focused approach to personal financing</h2>
+      <p>Bergoa9a LLC is focused on helping individuals explore Personal Loan financing options through a professional, guided application experience.</p>
       <div class="check-list">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Professional Service</div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Personalized Attention</div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Reliable Solutions</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Professional communication</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Personalized assistance</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Clear financing process</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== WHY CHOOSE US ===== -->
 <section class="why">
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Why Choose Us</span>
-      <h2>Why Choose Bergoa9a LLC?</h2>
-      <p>The confidence of working with a team that's invested in your outcome.</p>
+      <h2>Personal Loan support with clarity at every step</h2>
+      <p>A focused experience designed around your financing request.</p>
     </div>
     <div class="why-grid">
-      <div class="why-card reveal">
-        <span class="num">01</span>
-        <h3>Experience</h3>
-        <p>Dedicated support focused on helping clients achieve their financial goals.</p>
-      </div>
-      <div class="why-card reveal">
-        <span class="num">02</span>
-        <h3>Trust</h3>
-        <p>Transparent communication and customer-focused solutions.</p>
-      </div>
-      <div class="why-card reveal">
-        <span class="num">03</span>
-        <h3>Support</h3>
-        <p>Guidance throughout every step of the process.</p>
-      </div>
+      <div class="why-card reveal"><span class="num">01</span><h3>Personalized Assistance</h3><p>Get guidance focused on your Personal Loan application and the information you provide.</p></div>
+      <div class="why-card reveal"><span class="num">02</span><h3>Transparent Process</h3><p>Understand the application and review stages without promises of approval or specific loan terms.</p></div>
+      <div class="why-card reveal"><span class="num">03</span><h3>Secure Information Handling</h3><p>Your application information is handled as part of the financing evaluation and authorization process.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
 <section class="faq" id="faq">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Frequently Asked Questions</span>
-      <h2>Answers before you reach out</h2>
-      <p>Still unsure? Send us a message — we're glad to walk you through it.</p>
+      <span class="eyebrow">Personal Loan FAQ</span>
+      <h2>Answers before you apply</h2>
+      <p>Review common questions about Personal Loans and the application process.</p>
     </div>
     <div class="faq-list reveal">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          How do I apply for a service?
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="faq-answer">
-          <p>Click the "Apply Now" or "Get Started" button on any service card. Fill out the short form and submit — your information will be sent directly to our WhatsApp so we can follow up quickly.</p>
-        </div>
+        <button class="faq-question" aria-expanded="false">What is a Personal Loan?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-answer"><p>A Personal Loan is financing intended for personal financial needs. Available options, eligibility and terms depend on the applicable review and provider.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Do I need to visit an office?
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="faq-answer">
-          <p>No, consultations can start online through our forms and WhatsApp. We make the process as convenient as possible.</p>
-        </div>
+        <button class="faq-question" aria-expanded="false">How do I apply?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-answer"><p>Use any Start Application or Apply Now button to open the existing Personal Loan application page and submit the requested information.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          How can I know which service is right for me?
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="faq-answer">
-          <p>Our team will review your needs and recommend the best option. You can also reach out directly via WhatsApp for a quick consultation.</p>
-        </div>
+        <button class="faq-question" aria-expanded="false">What information do I need?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-answer"><p>The application page will identify the information required to evaluate your request. Provide accurate and complete information to the best of your knowledge.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          Is financing available for the educational classes?
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="faq-answer">
-          <p>Yes! Bergoa9a LLC offers company financing for eligible class enrollments. Indicate your interest in financing on the class application form and we'll walk you through the options.</p>
-        </div>
+        <button class="faq-question" aria-expanded="false">Does applying guarantee approval?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-answer"><p>No. Submitting an application does not guarantee approval, funding, a specific rate, a specific amount or any particular loan terms.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">How is my application reviewed?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-answer"><p>Your submitted information may be reviewed as part of the financing evaluation. Additional verification may be requested when applicable.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Can my application be shared with lending partners?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-answer"><p>When applicable, your application may be shared with one or more lending partners only when the required authorization has been provided.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">How is my personal information handled?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="faq-answer"><p>Personal information is handled for application evaluation, communication and related service purposes as described in the Privacy Policy and applicable authorization language.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Get In Touch</span>
-      <h2>Contact Bergoa9a LLC</h2>
-      <p>Tell us what you need and we'll follow up by phone, email or WhatsApp.</p>
+      <span class="eyebrow">Personal Loan Inquiries</span>
+      <h2>Ready to explore your options?</h2>
+      <p>Start the existing Personal Loan application or contact Bergoa9a LLC through WhatsApp.</p>
     </div>
     <div class="contact-inner">
       <div class="contact-info reveal">
-        <h3>Contact Information</h3>
-        <p>We're available to answer your questions during business hours.</p>
-
-        <div class="contact-row">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div><strong>Phone</strong><span>+1 (407) 515-5785</span></div>
-        </div>
-        <div class="contact-row">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="4" width="20" height="16" rx="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div><strong>Email</strong><span>BGFinancial@bergoa9a.org</span></div>
-        </div>
-        <div class="contact-row">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div>
-            <strong>Business Hours</strong>
-            <div class="txt">Monday – Friday: 8:00 AM – 6:00 PM<br>Saturday: 8:00 AM – 6:00 PM</div>
-          </div>
-        </div>
-
-        <a class="btn btn-whatsapp" href="https://wa.me/14075155785" target="_blank" rel="noopener" style="margin-top:10px;width:100%;">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
-          Message Us on WhatsApp
-        </a>
+        <h3>Personal Loan Support</h3>
+        <p>Reach out with questions about the application and financing evaluation process.</p>
+        <div class="contact-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><strong>Phone</strong><span>+1 (407) 515-5785</span></div></div>
+        <div class="contact-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div><div><strong>Email</strong><span>BGFinancial@bergoa9a.org</span></div></div>
+        <a class="btn btn-whatsapp" href="https://wa.me/14075155785" target="_blank" rel="noopener" style="margin-top:10px;width:100%;">Message Us on WhatsApp</a>
+        <a class="btn btn-primary" href="personal-loan-application.html" style="margin-top:12px;width:100%;">Start Application</a>
       </div>
-
       <div class="contact-form reveal">
-        <h3>Send Us a Message</h3>
+        <h3>Personal Loan Inquiry</h3>
         <form id="bgForm">
           <div class="form-row">
-            <div class="field">
-              <label for="fullName">Full Name *</label>
-              <input type="text" id="fullName" name="fullName" required>
-            </div>
-            <div class="field">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" required>
-            </div>
+            <div class="field"><label for="fullName">Full Name *</label><input type="text" id="fullName" name="fullName" required></div>
+            <div class="field"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" required></div>
           </div>
-          <div class="field">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="field">
-            <label for="service">Select Service *</label>
-            <select id="service" name="service" required>
-              <option value="" disabled selected>Select a service</option>
-              <option value="Personal Loans">Personal Loans</option>
-              <option value="Tax Preparation">Tax Preparation</option>
-              <option value="Personal Credit Repair">Personal Credit Repair</option>
-              <option value="Business Credit Repair">Business Credit Repair</option>
-              <option value="Business Formation">Business Formation</option>
-              <option value="Immigration Services">Immigration Services</option>
-              <option value="Notary Services">Notary Services</option>
-              <option value="Certified Translation">Certified Translation</option>
-              <option value="Financial Education Classes">Financial Education Classes</option>
-              <option value="Business Consulting">Business Consulting</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell us a bit about what you need..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;">
-            Send Request
+          <div class="field"><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us what you would like to know about Personal Loans..."></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send Personal Loan Inquiry
             <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <p class="form-note">Submitting this form opens WhatsApp with your request pre-filled, ready to send to +1 (407) 515-5785.</p>
+          <p class="form-note">Submitting this inquiry opens WhatsApp with your request pre-filled, ready to send to +1 (407) 515-5785.</p>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
         <img src="bglogobc.png" alt="Bergoa9a LLC logo" style="height:42px;"
-             onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'logo-fallback',innerHTML:'<div class=badge style=background:rgba(255,255,255,0.15)>BG</div><div><span class=wordmark>Bergoa9a LLC</span><small>Loans · MasterClass · Credit Repair</small></div>'}))">
-        <p>Financial solutions and educational services designed to help you move forward.</p>
+             onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'logo-fallback',innerHTML:'<div class=badge style=background:rgba(255,255,255,0.15)>BG</div><div><span class=wordmark>Bergoa9a LLC</span><small>Personal Loans</small></div>'}))">
+        <p>Personal Loan financing support with a clear, guided application experience.</p>
         <div class="social-row">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
           <a href="https://wa.me/14075155785" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg></a>
         </div>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4>Personal Loans</h4>
         <a href="#services">Personal Loans</a>
-        <a href="class-application.html">Financial Classes</a>
-        <a href="#services">Credit Repair</a>
-        <a href="#services">Tax Preparation</a>
-        <a href="#services">Business Services</a>
+        <a href="personal-loan-application.html">Start Application</a>
+        <a href="#how-it-works">How It Works</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="#about">About Us</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
-        <a href="personal-loan-application.html">Apply for a Loan</a>
-        <a href="class-application.html">Class Application</a>
       </div>
       <div class="footer-col">
-    <h4>Legal</h4>
-    <a href="#" data-legal="terms">Terms of Use</a>
-    <a href="#" data-legal="privacy">Privacy Policy</a>
-    <a href="#" data-legal="ca-notice">CA Notice of Collection</a>
-    <a href="#" data-legal="data-use">Data Collection and Use</a>
-    <a href="#" data-legal="accessibility">Accessibility</a>
-    <a href="#" data-legal="disclosures">Disclosures and Agreements</a>
-    <a href="#" data-legal="licenses">Licenses</a>
-    </div>
+        <h4>Legal</h4>
+        <a href="#" data-legal="terms">Terms of Use</a>
+        <a href="#" data-legal="privacy">Privacy Policy</a>
+        <a href="#" data-legal="disclosures">Loan Disclosures</a>
+        <a href="#" data-legal="accessibility">Accessibility</a>
+        <a href="#" data-legal="data-use">Data Collection &amp; Use</a>
+        <button type="button" class="cookie-preferences-link" id="openCookiePreferences">Cookie Preferences</button>
+      </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Bergoa9a LLC. All rights reserved.</span>
-      <span>Designed to help you move forward.</span>
+      <span>Personal Loans</span>
     </div>
   </div>
 </footer>
 
-<!-- LEGAL MODAL -->
-<div id="legalModal" class="legal-modal">
+<div id="legalModal" class="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legalTitle" aria-hidden="true">
   <div class="legal-modal-content">
     <div class="legal-modal-header">
       <h3 id="legalTitle"></h3>
@@ -757,411 +419,56 @@
   </div>
 </div>
 
-<!-- ===== WHATSAPP FLOATING BUTTON ===== -->
 <a class="wa-float" href="https://wa.me/14075155785" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
   <span class="wa-float-ring"></span>
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 1-3.72-1.02l-.27-.16-2.77.88.88-2.7-.18-.28a7.3 7.3 0 0 1-1.12-3.9c0-4.04 3.29-7.33 7.34-7.33a7.3 7.3 0 0 1 5.18 2.15 7.27 7.27 0 0 1 2.15 5.18c0 4.05-3.3 7.34-7.34 7.34zm4.02-5.5c-.22-.11-1.3-.64-1.5-.72-.2-.07-.35-.11-.5.11-.14.22-.56.71-.7.86-.13.14-.26.16-.48.05-.65-.32-1.27-.7-1.85-1.13a7.07 7.07 0 0 1-1.3-1.62c-.14-.24 0-.36.13-.5.13-.14.3-.36.43-.54.13-.18.04-.34-.05-.5-.09-.16-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.38h-.43c-.14 0-.38.05-.58.27-.2.22-.78.76-.78 1.85s.8 2.15.92 2.3c.11.14 1.55 2.37 3.76 3.23 2.21.87 2.21.58 2.6.55.4-.04 1.3-.53 1.48-1.04.18-.5.18-.93.13-1.04-.05-.1-.2-.16-.42-.27z"/></svg>
 </a>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<!-- =============================================
-     SERVICE MODALS
-     ============================================= -->
-
-<!-- TAX PREPARATION MODAL -->
-<div class="svc-modal" id="taxModal" role="dialog" aria-modal="true" aria-labelledby="taxModalTitle">
-  <div class="svc-modal-box">
-    <div class="svc-modal-header">
-      <h2 id="taxModalTitle">Tax Preparation Application</h2>
-      <button class="svc-modal-close" onclick="closeModal('taxModal')" aria-label="Close">&times;</button>
-    </div>
-    <div class="svc-modal-body">
-      <form id="taxForm" novalidate>
-        <p class="form-section-title">Personal Information</p>
-        <div class="form-row">
-          <div class="field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="John Doe"></div>
-          <div class="field"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="+1 (407) 000-0000"></div>
-        </div>
-        <div class="field"><label>Email Address *</label><input type="email" name="email" required placeholder="you@email.com"></div>
-
-        <p class="form-section-title">Tax Details</p>
-        <div class="form-row">
-          <div class="field">
-            <label>Tax Filing Type *</label>
-            <select name="filingType" required>
-              <option value="" disabled selected>Select type</option>
-              <option>Individual / Personal</option>
-              <option>Self-Employed / Freelancer</option>
-              <option>LLC (Single Member)</option>
-              <option>LLC (Multi Member)</option>
-              <option>S-Corporation</option>
-              <option>Small Business</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Tax Year *</label>
-            <select name="taxYear" required>
-              <option value="" disabled selected>Select year</option>
-              <option>2024</option>
-              <option>2023</option>
-              <option>2022</option>
-              <option>2021</option>
-              <option>Multiple Years</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label>Return Type *</label>
-          <select name="returnType" required>
-            <option value="" disabled selected>Select return type</option>
-            <option>Individual Return</option>
-            <option>Business Return</option>
-            <option>Both Individual &amp; Business</option>
-            <option>Amended Return</option>
-          </select>
-        </div>
-        <div class="field"><label>Additional Notes</label><textarea name="notes" placeholder="Any specific situations, IRS notices, or questions we should know about..."></textarea></div>
-
-        <button type="submit" class="modal-submit">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
-          Submit &amp; Open WhatsApp
-        </button>
-        <p class="form-note-sm">Your information will be sent to Bergoa9a LLC via WhatsApp (+1 407-515-5785)</p>
-      </form>
-    </div>
+<!-- Cookie banner -->
+<section class="cookie-banner" id="cookieBanner" hidden aria-label="Cookie consent">
+  <div>
+    <h3>Your Cookie Preferences</h3>
+    <p>This website may use cookies and similar technologies for essential functionality, analytics, preferences and service-related communications where applicable. Cookie consent is separate from any Personal Loan application or authorization to share an application with lending partners.</p>
   </div>
-</div>
-
-<!-- PERSONAL CREDIT REPAIR MODAL -->
-<div class="svc-modal" id="personalCreditModal" role="dialog" aria-modal="true" aria-labelledby="personalCreditTitle">
-  <div class="svc-modal-box">
-    <div class="svc-modal-header">
-      <h2 id="personalCreditTitle">Personal Credit Repair Application</h2>
-      <button class="svc-modal-close" onclick="closeModal('personalCreditModal')" aria-label="Close">&times;</button>
-    </div>
-    <div class="svc-modal-body">
-      <form id="personalCreditForm" novalidate>
-        <p class="form-section-title">Personal Information</p>
-        <div class="form-row">
-          <div class="field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="John Doe"></div>
-          <div class="field"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="+1 (407) 000-0000"></div>
-        </div>
-        <div class="field"><label>Email Address *</label><input type="email" name="email" required placeholder="you@email.com"></div>
-
-        <p class="form-section-title">Credit Information</p>
-        <div class="field">
-          <label>Current Credit Score Range *</label>
-          <select name="creditScore" required>
-            <option value="" disabled selected>Select range</option>
-            <option>Below 580 (Poor)</option>
-            <option>580–669 (Fair)</option>
-            <option>670–739 (Good)</option>
-            <option>740–799 (Very Good)</option>
-            <option>800+ (Exceptional)</option>
-            <option>I don't know my score</option>
-          </select>
-        </div>
-        <div class="field"><label>Main Credit Concerns *</label><textarea name="concerns" required placeholder="Collections, late payments, charge-offs, identity theft, etc."></textarea></div>
-        <div class="field"><label>Financial Goals</label><textarea name="goals" placeholder="What would you like to accomplish? (buy a home, qualify for a loan, etc.)"></textarea></div>
-
-        <button type="submit" class="modal-submit">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
-          Submit &amp; Open WhatsApp
-        </button>
-        <p class="form-note-sm">Your information will be sent to Bergoa9a LLC via WhatsApp (+1 407-515-5785)</p>
-      </form>
-    </div>
+  <div class="cookie-actions">
+    <button type="button" class="cookie-btn" id="rejectCookies">Reject Non-Essential</button>
+    <button type="button" class="cookie-btn" id="cookieSettings">Cookie Settings</button>
+    <button type="button" class="cookie-btn cookie-btn-primary" id="acceptCookies">Accept All</button>
   </div>
-</div>
+</section>
 
-<!-- BUSINESS CREDIT REPAIR MODAL -->
-<div class="svc-modal" id="bizCreditModal" role="dialog" aria-modal="true" aria-labelledby="bizCreditTitle">
-  <div class="svc-modal-box">
-    <div class="svc-modal-header">
-      <h2 id="bizCreditTitle">Business Credit Repair Application</h2>
-      <button class="svc-modal-close" onclick="closeModal('bizCreditModal')" aria-label="Close">&times;</button>
+<!-- Cookie settings modal -->
+<div class="cookie-modal" id="cookieModal" hidden role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">
+  <div class="cookie-modal-card">
+    <div class="cookie-modal-head">
+      <h3 id="cookieModalTitle">Cookie Settings</h3>
+      <button type="button" class="cookie-close" id="closeCookieModal" aria-label="Close cookie settings">&times;</button>
     </div>
-    <div class="svc-modal-body">
-      <form id="bizCreditForm" novalidate>
-        <p class="form-section-title">Business Information</p>
-        <div class="form-row">
-          <div class="field"><label>Business Name *</label><input type="text" name="bizName" required placeholder="My Business LLC"></div>
-          <div class="field"><label>Owner Name *</label><input type="text" name="ownerName" required placeholder="John Doe"></div>
-        </div>
-        <div class="form-row">
-          <div class="field"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="+1 (407) 000-0000"></div>
-          <div class="field"><label>Email Address *</label><input type="email" name="email" required placeholder="you@email.com"></div>
-        </div>
-        <div class="field"><label>EIN (Employer Identification Number)</label><input type="text" name="ein" placeholder="XX-XXXXXXX"></div>
-
-        <p class="form-section-title">Credit Details</p>
-        <div class="field">
-          <label>Does your business currently have established credit? *</label>
-          <select name="existingCredit" required>
-            <option value="" disabled selected>Select</option>
-            <option>Yes – some credit established</option>
-            <option>No – starting from scratch</option>
-            <option>Not sure</option>
-          </select>
-        </div>
-        <div class="field"><label>Funding Goals</label><textarea name="fundingGoals" placeholder="What type of financing are you looking for? (credit lines, equipment, real estate, etc.)"></textarea></div>
-
-        <button type="submit" class="modal-submit">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
-          Submit &amp; Open WhatsApp
-        </button>
-        <p class="form-note-sm">Your information will be sent to Bergoa9a LLC via WhatsApp (+1 407-515-5785)</p>
-      </form>
+    <div class="cookie-modal-body">
+      <p>Choose which non-essential cookie categories you want to allow. Necessary cookies are always enabled. These settings are separate from loan application consent and marketing communications.</p>
+      <div class="cookie-category">
+        <div><h4>Necessary</h4><p>Required for core website functionality, security and your consent preference.</p></div>
+        <label class="cookie-toggle"><input type="checkbox" checked disabled><span></span></label>
+      </div>
+      <div class="cookie-category">
+        <div><h4>Analytics</h4><p>Helps measure website usage and performance if analytics tools are used.</p></div>
+        <label class="cookie-toggle"><input type="checkbox" id="cookieAnalytics"><span></span></label>
+      </div>
+      <div class="cookie-category">
+        <div><h4>Preferences</h4><p>Remembers optional settings that can improve your website experience.</p></div>
+        <label class="cookie-toggle"><input type="checkbox" id="cookiePreferences"><span></span></label>
+      </div>
+      <div class="cookie-category">
+        <div><h4>Marketing</h4><p>Allows optional marketing-related technologies if they are used in the future.</p></div>
+        <label class="cookie-toggle"><input type="checkbox" id="cookieMarketing"><span></span></label>
+      </div>
     </div>
-  </div>
-</div>
-
-<!-- BUSINESS FORMATION MODAL -->
-<div class="svc-modal" id="bizFormModal" role="dialog" aria-modal="true" aria-labelledby="bizFormTitle">
-  <div class="svc-modal-box">
-    <div class="svc-modal-header">
-      <h2 id="bizFormTitle">Business Formation Application</h2>
-      <button class="svc-modal-close" onclick="closeModal('bizFormModal')" aria-label="Close">&times;</button>
-    </div>
-    <div class="svc-modal-body">
-      <form id="bizFormationForm" novalidate>
-        <p class="form-section-title">Personal Information</p>
-        <div class="form-row">
-          <div class="field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="John Doe"></div>
-          <div class="field"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="+1 (407) 000-0000"></div>
-        </div>
-        <div class="field"><label>Email Address *</label><input type="email" name="email" required placeholder="you@email.com"></div>
-
-        <p class="form-section-title">Business Details</p>
-        <div class="field"><label>Desired Business Name *</label><input type="text" name="bizName" required placeholder="My Business LLC"></div>
-        <div class="form-row">
-          <div class="field">
-            <label>State of Registration *</label>
-            <select name="state" required>
-              <option value="" disabled selected>Select state</option>
-              <option>Florida</option><option>Texas</option><option>California</option>
-              <option>New York</option><option>Georgia</option><option>Nevada</option>
-              <option>Delaware</option><option>Wyoming</option><option>Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Business Type *</label>
-            <select name="bizType" required>
-              <option value="" disabled selected>Select type</option>
-              <option>LLC (Single Member)</option>
-              <option>LLC (Multi Member)</option>
-              <option>S-Corporation</option>
-              <option>C-Corporation</option>
-              <option>Sole Proprietorship</option>
-              <option>Not sure – need guidance</option>
-            </select>
-          </div>
-        </div>
-        <div class="field"><label>Services / Products Offered *</label><textarea name="services" required placeholder="Briefly describe what your business will offer..."></textarea></div>
-
-        <button type="submit" class="modal-submit">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
-          Submit &amp; Open WhatsApp
-        </button>
-        <p class="form-note-sm">Your information will be sent to Bergoa9a LLC via WhatsApp (+1 407-515-5785)</p>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- IMMIGRATION SERVICES MODAL -->
-<div class="svc-modal" id="immigrationModal" role="dialog" aria-modal="true" aria-labelledby="immigrationTitle">
-  <div class="svc-modal-box">
-    <div class="svc-modal-header">
-      <h2 id="immigrationTitle">Immigration Services Application</h2>
-      <button class="svc-modal-close" onclick="closeModal('immigrationModal')" aria-label="Close">&times;</button>
-    </div>
-    <div class="svc-modal-body">
-      <form id="immigrationForm" novalidate>
-        <p class="form-section-title">Personal Information</p>
-        <div class="form-row">
-          <div class="field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="John Doe"></div>
-          <div class="field"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="+1 (407) 000-0000"></div>
-        </div>
-        <div class="field"><label>Email Address *</label><input type="email" name="email" required placeholder="you@email.com"></div>
-
-        <p class="form-section-title">Immigration Details</p>
-        <div class="field">
-          <label>Immigration Service Needed *</label>
-          <select name="serviceType" required>
-            <option value="" disabled selected>Select service</option>
-            <option>Citizenship Application (N-400)</option>
-            <option>Residency Renewal (Green Card)</option>
-            <option>Family Petition (I-130)</option>
-            <option>Status Adjustment (I-485)</option>
-            <option>Work Permit (EAD)</option>
-            <option>DACA Renewal</option>
-            <option>Travel Document</option>
-            <option>Other – please specify below</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Current Immigration Status</label>
-          <input type="text" name="currentStatus" placeholder="e.g. Undocumented, Tourist Visa, Green Card holder, etc.">
-        </div>
-        <div class="field"><label>Additional Information</label><textarea name="additionalInfo" placeholder="Please share any details about your situation that would help us assist you better..."></textarea></div>
-
-        <button type="submit" class="modal-submit">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
-          Submit &amp; Open WhatsApp
-        </button>
-        <p class="form-note-sm">Your information will be sent to Bergoa9a LLC via WhatsApp (+1 407-515-5785)</p>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- NOTARY SERVICES MODAL -->
-<div class="svc-modal" id="notaryModal" role="dialog" aria-modal="true" aria-labelledby="notaryTitle">
-  <div class="svc-modal-box">
-    <div class="svc-modal-header">
-      <h2 id="notaryTitle">Notary Services Application</h2>
-      <button class="svc-modal-close" onclick="closeModal('notaryModal')" aria-label="Close">&times;</button>
-    </div>
-    <div class="svc-modal-body">
-      <form id="notaryForm" novalidate>
-        <p class="form-section-title">Personal Information</p>
-        <div class="form-row">
-          <div class="field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="John Doe"></div>
-          <div class="field"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="+1 (407) 000-0000"></div>
-        </div>
-        <div class="field"><label>Email Address *</label><input type="email" name="email" required placeholder="you@email.com"></div>
-
-        <p class="form-section-title">Notary Details</p>
-        <div class="field">
-          <label>Document Type *</label>
-          <select name="documentType" required>
-            <option value="" disabled selected>Select document type</option>
-            <option>Power of Attorney</option>
-            <option>Affidavit / Sworn Statement</option>
-            <option>Legal Contract</option>
-            <option>Corporate Document</option>
-            <option>Real Estate Document</option>
-            <option>Immigration Document</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <div class="field"><label>Number of Documents *</label><input type="number" name="numDocuments" required min="1" placeholder="1"></div>
-          <div class="field"><label>Preferred Appointment Date *</label><input type="date" name="appointmentDate" required></div>
-        </div>
-
-        <button type="submit" class="modal-submit">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
-          Submit &amp; Open WhatsApp
-        </button>
-        <p class="form-note-sm">Your information will be sent to Bergoa9a LLC via WhatsApp (+1 407-515-5785)</p>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- CERTIFIED TRANSLATION MODAL -->
-<div class="svc-modal" id="translationModal" role="dialog" aria-modal="true" aria-labelledby="translationTitle">
-  <div class="svc-modal-box">
-    <div class="svc-modal-header">
-      <h2 id="translationTitle">Certified Translation Application</h2>
-      <button class="svc-modal-close" onclick="closeModal('translationModal')" aria-label="Close">&times;</button>
-    </div>
-    <div class="svc-modal-body">
-      <form id="translationForm" novalidate>
-        <p class="form-section-title">Personal Information</p>
-        <div class="form-row">
-          <div class="field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="John Doe"></div>
-          <div class="field"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="+1 (407) 000-0000"></div>
-        </div>
-        <div class="field"><label>Email Address *</label><input type="email" name="email" required placeholder="you@email.com"></div>
-
-        <p class="form-section-title">Translation Details</p>
-        <div class="field">
-          <label>Document Type *</label>
-          <select name="documentType" required>
-            <option value="" disabled selected>Select document type</option>
-            <option>Birth Certificate</option>
-            <option>Marriage Certificate</option>
-            <option>Diploma / Academic Transcript</option>
-            <option>Legal Document</option>
-            <option>Immigration Document</option>
-            <option>Driver's License / ID</option>
-            <option>Medical Records</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label>Source Language *</label>
-            <select name="sourceLang" required>
-              <option value="" disabled selected>From</option>
-              <option>Spanish</option><option>English</option><option>Portuguese</option>
-              <option>French</option><option>Haitian Creole</option><option>Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Target Language *</label>
-            <select name="targetLang" required>
-              <option value="" disabled selected>To</option>
-              <option>English</option><option>Spanish</option><option>Portuguese</option>
-              <option>French</option><option>Haitian Creole</option><option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="field"><label>Number of Pages *</label><input type="number" name="numPages" required min="1" placeholder="1"></div>
-
-        <button type="submit" class="modal-submit">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
-          Submit &amp; Open WhatsApp
-        </button>
-        <p class="form-note-sm">Your information will be sent to Bergoa9a LLC via WhatsApp (+1 407-515-5785)</p>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- BUSINESS CONSULTING MODAL -->
-<div class="svc-modal" id="bizConsultingModal" role="dialog" aria-modal="true" aria-labelledby="bizConsultingTitle">
-  <div class="svc-modal-box">
-    <div class="svc-modal-header">
-      <h2 id="bizConsultingTitle">Business Consulting Application</h2>
-      <button class="svc-modal-close" onclick="closeModal('bizConsultingModal')" aria-label="Close">&times;</button>
-    </div>
-    <div class="svc-modal-body">
-      <form id="bizConsultingForm" novalidate>
-        <p class="form-section-title">Contact Information</p>
-        <div class="form-row">
-          <div class="field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="John Doe"></div>
-          <div class="field"><label>Business Name</label><input type="text" name="bizName" placeholder="My Business LLC"></div>
-        </div>
-        <div class="form-row">
-          <div class="field"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="+1 (407) 000-0000"></div>
-          <div class="field"><label>Email Address *</label><input type="email" name="email" required placeholder="you@email.com"></div>
-        </div>
-
-        <p class="form-section-title">Business Profile</p>
-        <div class="field">
-          <label>Business Stage *</label>
-          <select name="stage" required>
-            <option value="" disabled selected>Select stage</option>
-            <option>Idea / Pre-launch</option>
-            <option>Startup (0–1 year)</option>
-            <option>Growing (1–3 years)</option>
-            <option>Established (3+ years)</option>
-          </select>
-        </div>
-        <div class="field"><label>Main Challenges *</label><textarea name="challenges" required placeholder="What are the biggest challenges your business is facing?"></textarea></div>
-        <div class="field"><label>Consulting Goals</label><textarea name="goals" placeholder="What outcomes are you hoping to achieve through consulting?"></textarea></div>
-
-        <button type="submit" class="modal-submit">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.6 6.3A8.8 8.8 0 0 0 12.04 3.6c-4.86 0-8.8 3.94-8.8 8.8 0 1.55.4 3.05 1.18 4.36L3 21l4.4-1.4a8.8 8.8 0 0 0 4.65 1.33h.01c4.86 0 8.8-3.94 8.8-8.8a8.8 8.8 0 0 0-2.26-5.83z"/></svg>
-          Submit &amp; Open WhatsApp
-        </button>
-        <p class="form-note-sm">Your information will be sent to Bergoa9a LLC via WhatsApp (+1 407-515-5785)</p>
-      </form>
+    <div class="cookie-modal-actions">
+      <button type="button" class="cookie-btn" id="rejectFromModal">Reject Non-Essential</button>
+      <button type="button" class="cookie-btn" id="acceptFromModal">Accept All</button>
+      <button type="button" class="cookie-btn cookie-btn-primary" id="saveCookiePreferences">Save Preferences</button>
     </div>
   </div>
 </div>
